@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Upload CV</title>
+
+    <link rel="stylesheet"
+          href="upload-cv.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="overlay"></div>
+
+
+<header class="top-bar">
+
+    <div class="logo">
+
+        <h1>KG</h1>
+
+        <span data-translate="brand.jobFinder">
+            JOB FINDER
+        </span>
+
+    </div>
+
+
+    <a href="candidate-dashboard.html"
+       class="back-btn">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        <span data-translate="common.dashboard">
+            Dashboard
+        </span>
+
+    </a>
+
+</header>
+
+
+<section class="page-title">
+
+    <h2 data-translate="uploadCv.title">
+        Upload Your CV
+    </h2>
+
+    <p data-translate="uploadCv.description">
+        Complete the form below to upload your CV and apply for jobs.
+    </p>
+
+</section>
+
+
+<section class="upload-container">
+
+    <form id="uploadForm">
+
+
+        <div class="input-group">
+
+            <label for="fullName"
+                   data-translate="profile.fullName">
+
+                Full Name
+
+            </label>
+
+            <input
+                    type="text"
+                    id="fullName"
+                    data-translate-placeholder="profile.fullNamePlaceholder"
+                    placeholder="Enter your full name"
+                    required>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="email"
+                   data-translate="profile.email">
+
+                Email Address
+
+            </label>
+
+            <input
+                    type="email"
+                    id="email"
+                    data-translate-placeholder="profile.emailPlaceholder"
+                    placeholder="Enter your email address"
+                    required>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="phone"
+                   data-translate="profile.phone">
+
+                Phone Number
+
+            </label>
+
+            <input
+                    type="tel"
+                    id="phone"
+                    data-translate-placeholder="profile.phonePlaceholder"
+                    placeholder="Enter your phone number"
+                    required>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="city"
+                   data-translate="profile.city">
+
+                City
+
+            </label>
+
+            <input
+                    type="text"
+                    id="city"
+                    data-translate-placeholder="profile.cityPlaceholder"
+                    placeholder="Enter your city"
+                    required>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="cvFile"
+                   data-translate="uploadCv.cvLabel">
+
+                Upload CV (PDF, DOC, DOCX)
+
+            </label>
+
+            <input
+                    type="file"
+                    id="cvFile"
+                    accept=".pdf,.doc,.docx"
+                    required>
+
+            <small
+                    id="fileName"
+                    data-translate="uploadCv.noFile">
+
+                No file selected
+
+            </small>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="coverLetter"
+                   data-translate="uploadCv.coverLetter">
+
+                Cover Letter
+
+            </label>
+
+            <textarea
+                    id="coverLetter"
+                    rows="6"
+                    data-translate-placeholder="uploadCv.coverLetterPlaceholder"
+                    placeholder="Write a short cover letter..."></textarea>
+
+        </div>
+
+
+        <button
+                type="submit"
+                class="upload-btn"
+                data-translate="uploadCv.submit">
+
+            Submit Application
+
+        </button>
+
+
+        <a
+                href="candidate-dashboard.html"
+                class="back-dashboard"
+                data-translate="common.backToDashboard">
+
+            Back to Dashboard
+
+        </a>
+
+
+    </form>
+
+</section>
+
+
+<!-- TRANSLATION SYSTEM -->
+
+<script
+        type="module"
+        src="translations.js">
+</script>
+
+
+</body>
+
+</html>

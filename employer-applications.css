@@ -1,0 +1,850 @@
+/*==================================================
+RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#080808;
+    color:#ffffff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+
+/*==================================================
+PAGE
+==================================================*/
+
+.employer-applications-page{
+
+    min-height:100vh;
+
+    padding:35px 40px 60px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(212,175,55,.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #050505,
+            #111111 50%,
+            #17120a
+        );
+}
+
+
+/*==================================================
+HEADER
+==================================================*/
+
+.top-bar{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:0 auto 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:30px;
+}
+
+
+/*==================================================
+LOGO
+==================================================*/
+
+.logo{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.logo h1{
+
+    font-size:4.2rem;
+
+    font-weight:900;
+
+    line-height:.9;
+
+    letter-spacing:5px;
+
+    background:linear-gradient(
+        #ffffff,
+        #fff5c4,
+        #ffd700,
+        #d4af37,
+        #8b6508
+    );
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.logo span{
+
+    margin-top:-5px;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:8px;
+
+    color:#e6c765;
+}
+
+
+/*==================================================
+BACK BUTTON
+==================================================*/
+
+.back-btn{
+
+    min-width:145px;
+
+    height:48px;
+
+    padding:0 18px;
+
+    border: 1px solid #22c55e;
+
+    border-radius:13px;
+
+    background: #16a34a;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:9px;
+
+    transition:.3s;
+
+    position:relative;
+
+    z-index:5;
+}
+
+.back-btn i{
+    color:#d4af37;
+}
+
+.back-btn:hover{
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8df86,
+            #d4af37
+        );
+
+    color:#111111;
+
+    border-color:#ffd700;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(212,175,55,.25);
+}
+
+.back-btn:hover i{
+    color:#111111;
+}
+
+
+/*==================================================
+PAGE HEADING
+==================================================*/
+
+.page-heading{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:0 auto 30px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.page-heading h2{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    background:linear-gradient(
+        #ffffff,
+        #fff5c4,
+        #ffd700,
+        #d4af37
+    );
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.page-heading p{
+
+    margin-top:8px;
+
+    color:#a9a9a9;
+
+    font-size:.88rem;
+}
+
+
+/*==================================================
+APPLICATIONS CONTAINER
+==================================================*/
+
+.applications-container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+/*==================================================
+APPLICATION CARD
+==================================================*/
+
+.application-card{
+
+    position:relative;
+
+    padding:25px;
+
+    border:1px solid rgba(212,175,55,.28);
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(25,25,25,.96),
+            rgba(12,12,12,.96)
+        );
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.30);
+
+    transition:.35s;
+
+    overflow:hidden;
+}
+
+.application-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,.09),
+            transparent 55%
+        );
+
+    opacity:0;
+
+    transition:.35s;
+
+    pointer-events:none;
+}
+
+.application-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45),
+        0 0 25px rgba(212,175,55,.12);
+}
+
+.application-card:hover::before{
+    opacity:1;
+}
+
+
+/*==================================================
+APPLICATION TITLE
+==================================================*/
+
+.application-card h3{
+
+    position:relative;
+
+    z-index:2;
+
+    color:#ffffff;
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+}
+
+.application-card h4{
+
+    position:relative;
+
+    z-index:2;
+
+    color:#d4af37;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    margin-bottom:16px;
+}
+
+
+/*==================================================
+INFORMATION
+==================================================*/
+
+.application-card p{
+
+    position:relative;
+
+    z-index:2;
+
+    color:#b8b8b8;
+
+    font-size:.82rem;
+
+    line-height:1.6;
+
+    margin-bottom:8px;
+}
+
+.application-card p i{
+
+    width:19px;
+
+    color:#d4af37;
+
+    margin-right:5px;
+}
+
+
+/*==================================================
+CANDIDATE INFORMATION
+==================================================*/
+
+.candidate-info{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:16px;
+
+    padding-top:16px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.candidate-info strong{
+
+    color:#ffffff;
+
+    font-size:.82rem;
+}
+
+.candidate-info span{
+
+    color:#aaaaaa;
+
+    font-size:.8rem;
+}
+
+
+/*==================================================
+STATUS
+==================================================*/
+
+.application-status{
+
+    position:relative;
+
+    z-index:2;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    min-height:32px;
+
+    padding:5px 12px;
+
+    margin-top:12px;
+
+    border-radius:20px;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    background:rgba(212,175,55,.10);
+
+    color:#d4af37;
+
+    border:1px solid rgba(212,175,55,.25);
+}
+
+
+/*==================================================
+ACTIONS
+==================================================*/
+
+.application-actions{
+
+    position:relative;
+
+    z-index:5;
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+
+/*==================================================
+ACTION BUTTONS
+==================================================*/
+
+.application-actions button{
+
+    position:relative;
+
+    z-index:6;
+
+    height:42px;
+
+    padding:0 16px;
+
+    border-radius:11px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:.77rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    pointer-events:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:7px;
+
+    transition:.3s;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+    outline:none;
+}
+
+.application-actions button:focus{
+
+    outline:none;
+}
+
+.application-actions button:active{
+
+    transform:translateY(1px);
+}
+
+
+/*==================================================
+ACCEPT
+==================================================*/
+
+.accept-btn{
+
+    border:1px solid rgba(46,204,113,.35);
+
+    background:rgba(46,204,113,.08);
+
+    color:#55d98b;
+}
+
+.accept-btn:hover{
+
+    background:#198754;
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+
+    cursor:pointer;
+}
+
+
+/*==================================================
+REJECT
+==================================================*/
+
+.reject-btn{
+
+    border:1px solid rgba(255,59,48,.35);
+
+    background:rgba(255,59,48,.08);
+
+    color:#ff6b61;
+}
+
+.reject-btn:hover{
+
+    background:#b00020;
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+
+    cursor:pointer;
+}
+
+
+/*==================================================
+VIEW CANDIDATE
+==================================================*/
+
+.view-candidate-btn{
+
+    border:1px solid rgba(212,175,55,.35);
+
+    background:rgba(212,175,55,.08);
+
+    color:#d4af37;
+}
+
+.view-candidate-btn:hover{
+
+    background:#d4af37;
+
+    color:#111111;
+
+    transform:translateY(-2px);
+
+    cursor:pointer;
+}
+.view-cv-btn {
+
+    border: 1px solid #22c55e;
+
+    background: rgba(34,197,94,.08);
+
+    color: #22c55e;
+}
+
+.view-cv-btn:hover {
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    cursor: pointer;
+}
+
+
+/*==================================================
+LOADING / EMPTY
+==================================================*/
+
+.loading-message,
+.no-applications{
+
+    grid-column:1 / -1;
+
+    min-height:180px;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    border-radius:20px;
+
+    background:rgba(15,15,15,.75);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.loading-message i{
+
+    color:#d4af37;
+
+    font-size:1.6rem;
+
+    margin-bottom:12px;
+}
+
+.loading-message p,
+.no-applications p{
+
+    color:#999999;
+
+    font-size:.85rem;
+}
+
+.no-applications h3{
+
+    color:#ffffff;
+
+    font-size:1.1rem;
+
+    margin-bottom:7px;
+}
+
+
+/*==================================================
+TABLET
+==================================================*/
+
+@media(max-width:900px){
+
+    .employer-applications-page{
+
+        padding:30px 25px 45px;
+    }
+
+    .applications-container{
+
+        grid-template-columns:1fr;
+    }
+}
+
+
+/*==================================================
+MOBILE
+==================================================*/
+
+@media(max-width:600px){
+
+    .employer-applications-page{
+
+        padding:20px 15px 35px;
+    }
+
+    .top-bar{
+
+        align-items:center;
+
+        margin-bottom:28px;
+    }
+
+    .logo h1{
+
+        font-size:3rem;
+
+        letter-spacing:4px;
+    }
+
+    .logo span{
+
+        font-size:.65rem;
+
+        letter-spacing:5px;
+    }
+
+    .back-btn{
+
+        min-width:110px;
+
+        height:43px;
+
+        padding:0 12px;
+
+        font-size:.75rem;
+    }
+
+    .page-heading{
+
+        margin-bottom:22px;
+    }
+
+    .page-heading h2{
+
+        font-size:1.55rem;
+    }
+
+    .page-heading p{
+
+        font-size:.78rem;
+
+        line-height:1.5;
+    }
+
+    .applications-container{
+
+        gap:14px;
+    }
+
+    .application-card{
+
+        padding:20px;
+
+        border-radius:18px;
+    }
+
+    .application-card h3{
+
+        font-size:1.05rem;
+    }
+
+    .application-card h4{
+
+        font-size:.82rem;
+    }
+
+    .application-card p{
+
+        font-size:.76rem;
+    }
+
+    .application-actions{
+
+        flex-direction:column;
+
+        position:relative;
+
+        z-index:5;
+    }
+
+    .application-actions button{
+
+        width:100%;
+
+        position:relative;
+
+        z-index:6;
+    }
+}
+
+
+/*==================================================
+SMALL MOBILE
+==================================================*/
+
+@media(max-width:380px){
+
+    .logo h1{
+
+        font-size:2.6rem;
+    }
+
+    .logo span{
+
+        font-size:.58rem;
+
+        letter-spacing:4px;
+    }
+
+    .back-btn{
+
+        min-width:100px;
+
+        height:40px;
+
+        font-size:.7rem;
+    }
+
+    .application-card{
+
+        padding:17px;
+    }
+}
+
+
+/*==================================================
+END
+==================================================*/

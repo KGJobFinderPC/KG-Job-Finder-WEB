@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | My Applications</title>
+
+    <link rel="stylesheet"
+          href="applications.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           APPLICATION BUTTONS
+           ===================================================== */
+
+        .application-buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 18px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .view-details-button,
+        .delete-application-button {
+
+            border: none;
+
+            padding: 10px 15px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease,
+                opacity .2s ease;
+
+        }
+
+
+        /* GOLD */
+
+        .view-details-button {
+
+            background: #ffd84d;
+
+            color: #111827;
+
+            box-shadow:
+                0 5px 18px rgba(255,216,77,.12);
+
+        }
+
+
+        .view-details-button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 22px rgba(255,216,77,.22);
+
+            opacity: .95;
+
+        }
+
+
+        /* RED */
+
+        .delete-application-button {
+
+            background: #dc3545;
+
+            color: #ffffff;
+
+            box-shadow:
+                0 5px 18px rgba(220,53,69,.12);
+
+        }
+
+
+        .delete-application-button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 22px rgba(220,53,69,.22);
+
+            opacity: .95;
+
+        }
+
+
+        .view-details-button:active,
+        .delete-application-button:active {
+
+            transform: translateY(0);
+
+        }
+
+
+        .dashboard-loading {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<main class="applications-page">
+
+    <div class="overlay"></div>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="top-bar">
+
+        <div class="logo">
+
+            <h1>KG</h1>
+
+            <span data-translate="brand.jobFinder">
+                JOB FINDER
+            </span>
+
+        </div>
+
+
+        <a
+                href="dashboard.html"
+                id="backDashboardBtn"
+                class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span data-translate="common.dashboard">
+                Dashboard
+            </span>
+
+        </a>
+
+    </header>
+
+
+    <!-- =====================================================
+         TITLE
+         ===================================================== -->
+
+    <section class="page-title">
+
+        <h2 data-translate="applications.title">
+            My Applications
+        </h2>
+
+        <p data-translate="applications.description">
+            Track all the jobs you have applied for.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         APPLICATIONS
+         ===================================================== -->
+
+    <section
+            class="applications-container"
+            id="applicationsContainer">
+
+        <div class="loading-message">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <p data-translate="applications.loading">
+                Loading your applications...
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     APPLICATION LOGIC
+     ===================================================== -->
+
+<script type="module">
+
+    import { supabase } from "./supabase.js";
+
+
+    //=========================================================
+    // ELEMENTS
+    //=========================================================
+
+    const container =
+        document.getElementById(
+            "applicationsContainer"
+        );
+
+
+    const backDashboardBtn =
+        document.getElementById(
+            "backDashboardBtn"
+        );
+
+
+    //=========================================================
+    // CURRENT USER
+    //=========================================================
+
+    async function getCurrentUser() {
+
+        const {
+            data,
+            error
+        } = await supabase.auth.getUser();
+
+
+        if (
+            error ||
+            !data.user
+        ) {
+
+            window.location.replace(
+                "login.html"
+            );
+
+            return null;
+
+        }
+
+
+        return data.user;
+
+    }
+
+
+    //=========================================================
+    // SET CORRECT DASHBOARD
+    //=========================================================
+
+    async function setupDashboardLink() {
+
+        const user =
+            await getCurrentUser();
+
+
+        if (!user) {
+
+            return;
+
+        }
+
+
+        const accountType =
+            String(
+                user.user_metadata?.account_type ||
+                user.user_metadata?.accountType ||
+                user.user_metadata?.role ||
+                ""
+            ).toLowerCase();
+
+
+        //=====================================================
+        // ADMIN
+        //=====================================================
+
+        if (
+            accountType === "admin" ||
+            accountType === "administrator"
+        ) {
+
+            backDashboardBtn.href =
+                "dashboard.html";
+
+            return;
+
+        }
+
+
+        //=====================================================
+        // EMPLOYER
+        //=====================================================
+
+        if (
+            accountType === "employer"
+        ) {
+
+            backDashboardBtn.href =
+                "employer-dashboard.html";
+
+            return;
+
+        }
+
+
+        //=====================================================
+        // CANDIDATE
+        //=====================================================
+
+        backDashboardBtn.href =
+            "candidate-dashboard.html";
+
+    }
+
+
+    //=========================================================
+    // ESCAPE HTML
+    //=========================================================
+
+    function escapeHtml(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+
+            .replace(
+                /</g,
+                "&lt;"
+            )
+
+            .replace(
+                />/g,
+                "&gt;"
+            )
+
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+
+    //=========================================================
+    // STATUS TRANSLATIONS
+    //=========================================================
+
+    function translateApplicationStatus(status) {
+
+        const normalized =
+            String(
+                status || "Pending"
+            )
+            .toLowerCase()
+            .trim();
+
+
+        const language =
+            localStorage.getItem(
+                "KG_JOB_FINDER_LANGUAGE"
+            ) || "en";
+
+
+        const statusMap = {
+
+            en: {
+
+                pending:
+                    "Pending",
+
+                accepted:
+                    "Accepted",
+
+                rejected:
+                    "Rejected"
+
+            },
+
+            ro: {
+
+                pending:
+                    "În așteptare",
+
+                accepted:
+                    "Acceptat",
+
+                rejected:
+                    "Respins"
+
+            }
+
+        };
+
+
+        if (
+            statusMap[language] &&
+            statusMap[language][normalized]
+        ) {
+
+            return statusMap[language][normalized];
+
+        }
+
+
+        return status || "Pending";
+
+    }
+
+
+    //=========================================================
+    // LOAD APPLICATIONS
+    //=========================================================
+
+    async function loadApplications() {
+
+        const user =
+            await getCurrentUser();
+
+
+        if (!user) {
+
+            return;
+
+        }
+
+
+        const {
+            data: applications,
+            error
+        } = await supabase
+
+            .from("applications")
+
+            .select("*")
+
+            .eq(
+                "user_id",
+                user.id
+            )
+
+            .order(
+                "created_at",
+                {
+                    ascending: false
+                }
+            );
+
+
+        console.log(
+            "MY APPLICATIONS:",
+            applications
+        );
+
+
+        if (error) {
+
+            console.error(
+                error
+            );
+
+
+            container.innerHTML = `
+
+                <div class="no-applications">
+
+                    <h3 data-translate="applications.loadError">
+                        Unable to load applications
+                    </h3>
+
+                    <p>
+                        ${escapeHtml(
+                            error.message
+                        )}
+                    </p>
+
+                </div>
+
+            `;
+
+
+            if (
+                typeof translateDataAttributes ===
+                "function"
+            ) {
+
+                translateDataAttributes();
+
+            }
+
+
+            return;
+
+        }
+
+
+        if (
+            !applications ||
+            applications.length === 0
+        ) {
+
+            container.innerHTML = `
+
+                <div class="no-applications">
+
+                    <h3 data-translate="applications.noApplications">
+                        No applications yet
+                    </h3>
+
+                    <p data-translate="applications.noApplicationsText">
+                        You have not submitted any job applications yet.
+                    </p>
+
+                </div>
+
+            `;
+
+
+            if (
+                typeof translateDataAttributes ===
+                "function"
+            ) {
+
+                translateDataAttributes();
+
+            }
+
+
+            return;
+
+        }
+
+
+        renderApplications(
+            applications
+        );
+
+    }
+
+
+    //=========================================================
+    // RENDER APPLICATIONS
+    //=========================================================
+
+    function renderApplications(
+        applications
+    ) {
+
+        container.innerHTML = "";
+
+
+        applications.forEach(
+            application => {
+
+
+                //=================================================
+                // APPLICATION DATA
+                //=================================================
+
+                const jobTitle =
+                    application.job_title ||
+                    "Unknown Job";
+
+
+                const company =
+                    application.company ||
+                    "Unknown Company";
+
+
+                const city =
+                    application.city ||
+                    "Not specified";
+
+
+                const salary =
+                    application.salary ||
+                    "Not specified";
+
+
+                const status =
+                    application.status ||
+                    "Pending";
+
+
+                const translatedStatus =
+                    translateApplicationStatus(
+                        status
+                    );
+
+
+                const cvName =
+                    application.cv_name ||
+                    "No CV attached";
+
+
+                const date =
+                    application.created_at
+
+                        ? new Date(
+                            application.created_at
+                        ).toLocaleDateString(
+                            "en-GB",
+                            {
+                                day: "2-digit",
+                                month: "long",
+                                year: "numeric"
+                            }
+                        )
+
+                        : "Not specified";
+
+
+                //=================================================
+                // CARD
+                //=================================================
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                card.className =
+                    "application-card";
+
+
+                card.innerHTML = `
+
+                    <h3>
+                        ${escapeHtml(jobTitle)}
+                    </h3>
+
+
+                    <h4>
+                        ${escapeHtml(company)}
+                    </h4>
+
+
+                    <p>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        ${escapeHtml(city)}
+
+                    </p>
+
+
+                    <p>
+
+                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                        ${escapeHtml(salary)}
+
+                    </p>
+
+
+                    <p>
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <span data-translate="applications.applied">
+                            Applied
+                        </span>:
+
+                        ${escapeHtml(date)}
+
+                    </p>
+
+
+                    <p>
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        <span data-translate="applications.cv">
+                            CV
+                        </span>:
+
+                        ${escapeHtml(cvName)}
+
+                    </p>
+
+
+                    <span class="status">
+
+                        ${escapeHtml(
+                            translatedStatus
+                        )}
+
+                    </span>
+
+
+                    <!-- BUTTONS -->
+
+                    <div class="application-buttons">
+
+
+                        <!-- VIEW -->
+
+                        <button
+                            type="button"
+                            class="view-details-button"
+                            data-translate="common.viewDetails">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                            View Details
+
+                        </button>
+
+
+                        <!-- DELETE -->
+
+                        <button
+                            type="button"
+                            class="delete-application-button"
+                            data-translate="common.delete">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                            Delete
+
+                        </button>
+
+
+                    </div>
+
+                `;
+
+
+                //=================================================
+                // VIEW DETAILS
+                //=================================================
+
+                const viewButton =
+                    card.querySelector(
+                        ".view-details-button"
+                    );
+
+
+                viewButton.addEventListener(
+                    "click",
+                    function() {
+
+
+                        const details = `
+
+    JOB APPLICATION
+
+    Job:
+    ${jobTitle}
+
+    Company:
+    ${company}
+
+    City:
+    ${city}
+
+    Salary:
+    ${salary}
+
+    Status:
+    ${status}
+
+    Applied:
+    ${date}
+
+
+    APPLICANT
+
+    Name:
+    ${application.full_name || "Not specified"}
+
+    Email:
+    ${application.email || "Not specified"}
+
+    Phone:
+    ${application.phone || "Not specified"}
+
+
+    CV
+
+    ${cvName}
+
+
+    COVER LETTER
+
+    ${application.cover_letter || "No cover letter provided."}
+
+                        `;
+
+
+                        alert(
+                            details
+                        );
+
+                    }
+                );
+
+
+                //=================================================
+                // DELETE
+                //=================================================
+
+                const deleteButton =
+                    card.querySelector(
+                        ".delete-application-button"
+                    );
+
+
+                deleteButton.addEventListener(
+                    "click",
+                    async function() {
+
+
+                        const confirmed =
+                            confirm(
+                                "Are you sure you want to delete this application?"
+                            );
+
+
+                        if (!confirmed) {
+
+                            return;
+
+                        }
+
+
+                        const {
+                            error
+                        } = await supabase
+
+                            .from("applications")
+
+                            .delete()
+
+                            .eq(
+                                "id",
+                                application.id
+                            );
+
+
+                        if (error) {
+
+                            alert(
+                                "Unable to delete application:\n\n" +
+                                error.message
+                            );
+
+                            return;
+
+                        }
+
+
+                        card.remove();
+
+
+                        //=================================================
+                        // NO APPLICATIONS LEFT
+                        //=================================================
+
+                        if (
+                            !container.querySelector(
+                                ".application-card"
+                            )
+                        ) {
+
+                            container.innerHTML = `
+
+                                <div class="no-applications">
+
+                                    <h3 data-translate="applications.noApplications">
+                                        No applications yet
+                                    </h3>
+
+                                    <p data-translate="applications.noApplicationsText">
+                                        You have not submitted any job applications yet.
+                                    </p>
+
+                                </div>
+
+                            `;
+
+
+                            if (
+                                typeof translateDataAttributes ===
+                                "function"
+                            ) {
+
+                                translateDataAttributes();
+
+                            }
+
+                        }
+
+                    }
+                );
+
+
+                container.appendChild(
+                    card
+                );
+
+
+                //=================================================
+                // TRANSLATE DYNAMIC CARD TEXT
+                //=================================================
+
+                if (
+                    typeof translateDataAttributes ===
+                    "function"
+                ) {
+
+                    translateDataAttributes();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    //=========================================================
+    // START
+    //=========================================================
+
+    setupDashboardLink();
+
+    loadApplications();
+
+</script>
+
+
+<script
+        type="module"
+        src="translations.js">
+</script>
+
+
+</body>
+
+</html>

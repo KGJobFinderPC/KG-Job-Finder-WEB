@@ -1,0 +1,494 @@
+/*==================================================
+RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#0f172a;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+}
+
+
+/*==================================================
+EMPLOYER PAGE
+==================================================*/
+
+.employer-page{
+
+    min-height:100vh;
+
+    background:#0f172a;
+
+    position:relative;
+
+    padding-bottom:40px;
+
+}
+
+
+/*==================================================
+HEADER
+==================================================*/
+
+.header{
+
+    position:relative;
+
+    z-index:10;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 45px;
+
+}
+
+
+/*==================================================
+LOGO
+==================================================*/
+
+.logo h1{
+
+    font-size:4rem;
+
+    font-weight:900;
+
+    line-height:1;
+
+    background:linear-gradient(
+        #ffffff,
+        #fff5c4,
+        #ffd700,
+        #d4af37,
+        #8b6508
+    );
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.logo span{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#e6c765;
+
+    letter-spacing:8px;
+
+    font-weight:700;
+
+    font-size:.9rem;
+
+}
+
+
+/*==================================================
+DASHBOARD CONTENT
+==================================================*/
+
+.dashboard-content{
+
+    position:relative;
+
+    min-height:calc(100vh - 130px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:40px 40px 70px;
+
+}
+
+
+/*==================================================
+WELCOME AREA
+==================================================*/
+
+.welcome{
+
+    width:100%;
+
+    max-width:850px;
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.small-title{
+
+    color:#d4af37;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+
+}
+
+.welcome h2{
+
+    font-size:3.2rem;
+
+    font-weight:800;
+
+    color: #ffd84d;
+
+    margin-bottom:15px;
+
+}
+
+.welcome > p:last-child{
+
+    color:#bfc5d0;
+
+    font-size:1rem;
+
+    line-height:1.7;
+
+}
+
+
+/*==================================================
+MENU
+==================================================*/
+
+.sidebar{
+
+    width:100%;
+
+    max-width:720px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+
+/*==================================================
+MENU BUTTONS
+==================================================*/
+
+.menu-button{
+
+    width:100%;
+
+    min-height:65px;
+
+    padding:0 22px;
+
+    border:1px solid rgba(212,175,55,.28);
+
+    border-radius:16px;
+
+    background:rgba(15,15,15,.60);
+
+    color:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:13px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.menu-button i{
+
+    color:#d4af37;
+
+    font-size:1.05rem;
+
+}
+
+.menu-button:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#ffd700;
+
+    background:rgba(212,175,55,.12);
+
+    box-shadow:
+        0 10px 30px rgba(212,175,55,.18);
+
+}
+
+.menu-button:hover i{
+
+    color:#ffd700;
+
+}
+
+
+/*==================================================
+LOGOUT
+==================================================*/
+
+.logout-button{
+
+    grid-column:1 / -1;
+
+    max-width:100%;
+
+    background:rgba(80,20,20,.20);
+
+    border-color:rgba(192,57,43,.35);
+
+}
+
+.logout-button i{
+
+    color:#e74c3c;
+
+}
+
+.logout-button:hover{
+
+    border-color:#e74c3c;
+
+    background:rgba(192,57,43,.12);
+
+    box-shadow:
+        0 10px 30px rgba(192,57,43,.18);
+
+}
+
+.logout-button:hover i{
+
+    color:#ff6b5a;
+
+}
+
+
+/*==================================================
+TABLET
+==================================================*/
+
+@media(max-width:900px){
+
+    .header{
+
+        padding:22px 30px;
+
+    }
+
+    .dashboard-content{
+
+        padding:
+            35px 30px 60px;
+
+    }
+
+    .welcome h2{
+
+        font-size:2.7rem;
+
+    }
+
+    .sidebar{
+
+        max-width:650px;
+
+    }
+
+}
+
+
+/*==================================================
+MOBILE
+==================================================*/
+
+@media(max-width:600px){
+
+    .header{
+
+        padding:20px;
+
+    }
+
+    .logo h1{
+
+        font-size:3rem;
+
+    }
+
+    .logo span{
+
+        font-size:.7rem;
+
+        letter-spacing:5px;
+
+    }
+
+    .dashboard-content{
+
+        min-height:auto;
+
+        padding:
+            35px 20px 50px;
+
+    }
+
+    .welcome{
+
+        margin-bottom:30px;
+
+    }
+
+    .small-title{
+
+        font-size:.72rem;
+
+        letter-spacing:3px;
+
+    }
+
+    .welcome h2{
+
+        font-size:2rem;
+
+        line-height:1.2;
+
+    }
+
+    .welcome > p:last-child{
+
+        font-size:.88rem;
+
+    }
+
+    .sidebar{
+
+        grid-template-columns:1fr;
+
+        gap:14px;
+
+        width:100%;
+
+    }
+
+    .menu-button{
+
+        min-height:58px;
+
+        font-size:.9rem;
+
+    }
+
+    .logout-button{
+
+        grid-column:auto;
+
+    }
+
+}
+
+
+/*==================================================
+SMALL MOBILE
+==================================================*/
+
+@media(max-width:400px){
+
+    .header{
+
+        padding:18px 15px;
+
+    }
+
+    .logo h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .logo span{
+
+        font-size:.62rem;
+
+        letter-spacing:4px;
+
+    }
+
+    .dashboard-content{
+
+        padding-left:15px;
+
+        padding-right:15px;
+
+    }
+
+    .welcome h2{
+
+        font-size:1.75rem;
+
+    }
+
+    .menu-button{
+
+        min-height:55px;
+
+        padding:0 15px;
+
+    }
+
+}
+.menu-button:not(.logout-button) {
+    color: #ffd84d;
+}
+
+/*==================================================
+END
+==================================================*/

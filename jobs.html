@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Find Jobs</title>
+
+    <link rel="stylesheet"
+          href="jobs.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<main class="jobs-page">
+
+    <div class="overlay"></div>
+
+
+    <!-- TOP BAR -->
+
+    <header class="top-bar">
+
+        <div class="logo">
+
+            <h1>KG</h1>
+
+            <span data-translate="brand.jobFinder">
+                JOB FINDER
+            </span>
+
+        </div>
+
+
+        <a href="#"
+           id="dashboardButton"
+           class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span data-translate="common.dashboard">
+                Dashboard
+            </span>
+
+        </a>
+
+    </header>
+
+
+    <!-- SEARCH -->
+
+    <section class="search-section">
+
+        <h2 data-translate="jobs.title">
+            Find Your Next Job
+        </h2>
+
+        <p data-translate="jobs.subtitle">
+            Search thousands of opportunities across the UK.
+        </p>
+
+
+        <div class="search-box">
+
+            <input
+                    type="text"
+                    id="searchJob"
+                    data-translate-placeholder="jobs.jobPlaceholder"
+                    placeholder="Job title or keyword">
+
+
+            <input
+                    type="text"
+                    id="searchLocation"
+                    data-translate-placeholder="jobs.locationPlaceholder"
+                    placeholder="Location">
+
+
+            <select id="jobCategory">
+
+                <option
+                        value=""
+                        data-translate="jobs.allCategories">
+                    All Categories
+                </option>
+
+                <option
+                        value="Construction"
+                        data-translate="jobs.construction">
+                    Construction
+                </option>
+
+                <option
+                        value="Warehouse"
+                        data-translate="jobs.warehouse">
+                    Warehouse
+                </option>
+
+                <option
+                        value="Hospitality"
+                        data-translate="jobs.hospitality">
+                    Hospitality
+                </option>
+
+                <option
+                        value="Cleaning"
+                        data-translate="jobs.cleaning">
+                    Cleaning
+                </option>
+
+                <option
+                        value="Driving"
+                        data-translate="jobs.driving">
+                    Driving
+                </option>
+
+                <option
+                        value="Healthcare"
+                        data-translate="jobs.healthcare">
+                    Healthcare
+                </option>
+
+            </select>
+
+
+            <button
+                    id="searchButton"
+                    type="button">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <span data-translate="common.search">
+                    Search
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOBS -->
+
+    <section
+            class="jobs-container"
+            id="jobsContainer">
+
+
+        <!-- JOB 1 -->
+
+        <div class="job-card">
+
+            <h3 data-translate="jobs.constructionLabourer">
+                Construction Labourer
+            </h3>
+
+            <h4>
+                Build UK Ltd
+            </h4>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                London
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                £18/hour
+
+            </p>
+
+            <p data-translate="jobs.constructionDescription">
+                Full-time construction labourer required
+                for commercial projects.
+            </p>
+
+            <button
+                    class="apply-btn"
+                    type="button"
+                    data-translate="common.apply">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+
+        <!-- JOB 2 -->
+
+        <div class="job-card">
+
+            <h3 data-translate="jobs.warehouseOperative">
+                Warehouse Operative
+            </h3>
+
+            <h4>
+                Amazon Logistics
+            </h4>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Birmingham
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                £15/hour
+
+            </p>
+
+            <p data-translate="jobs.warehouseDescription">
+                Immediate start available for warehouse
+                operatives.
+            </p>
+
+            <button
+                    class="apply-btn"
+                    type="button"
+                    data-translate="common.apply">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+
+        <!-- JOB 3 -->
+
+        <div class="job-card">
+
+            <h3 data-translate="jobs.hotelHousekeeper">
+                Hotel Housekeeper
+            </h3>
+
+            <h4>
+                Premier Hotels
+            </h4>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Manchester
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                £14/hour
+
+            </p>
+
+            <p data-translate="jobs.hotelDescription">
+                Experienced housekeepers wanted
+                for luxury hotels.
+            </p>
+
+            <button
+                    class="apply-btn"
+                    type="button"
+                    data-translate="common.apply">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+
+        <!-- JOB 4 -->
+
+        <div class="job-card">
+
+            <h3 data-translate="jobs.deliveryDriver">
+                Delivery Driver
+            </h3>
+
+            <h4>
+                DPD UK
+            </h4>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Leeds
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                £17/hour
+
+            </p>
+
+            <p data-translate="jobs.deliveryDescription">
+                Multi-drop delivery driver with full
+                UK licence required.
+            </p>
+
+            <button
+                    class="apply-btn"
+                    type="button"
+                    data-translate="common.apply">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+
+        <!-- JOB 5 -->
+
+        <div class="job-card">
+
+            <h3 data-translate="jobs.careAssistant">
+                Care Assistant
+            </h3>
+
+            <h4>
+                Care First
+            </h4>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Liverpool
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                £16/hour
+
+            </p>
+
+            <p data-translate="jobs.careDescription">
+                Caring and reliable staff wanted
+                for residential care homes.
+            </p>
+
+            <button
+                    class="apply-btn"
+                    type="button"
+                    data-translate="common.apply">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+
+        <!-- JOB 6 -->
+
+        <div class="job-card">
+
+            <h3 data-translate="jobs.forkliftOperator">
+                Forklift Operator
+            </h3>
+
+            <h4>
+                DHL Supply Chain
+            </h4>
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Nottingham
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                £18/hour
+
+            </p>
+
+            <p data-translate="jobs.forkliftDescription">
+                Counterbalance forklift operators
+                required for warehouse work.
+            </p>
+
+            <button
+                    class="apply-btn"
+                    type="button"
+                    data-translate="common.apply">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- TRANSLATION SYSTEM -->
+
+    <script
+            type="module"
+            src="translations.js">
+    </script>
+
+
+    <!-- EXISTING JOBS JAVASCRIPT -->
+
+    <script
+            type="module"
+            src="jobs.js">
+    </script>
+
+
+</main>
+
+</body>
+
+</html>

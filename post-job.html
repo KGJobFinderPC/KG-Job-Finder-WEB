@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Post Job</title>
+
+    <link rel="stylesheet"
+          href="post-job.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<main class="post-job-page">
+
+
+    <!--==================================================
+    HEADER
+    ==================================================-->
+
+    <header class="top-bar">
+
+        <div class="logo">
+
+            <h1>KG</h1>
+
+            <span data-translate="brand.jobFinder">
+                JOB FINDER
+            </span>
+
+        </div>
+
+
+        <a href="employer-dashboard.html"
+           class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span data-translate="common.dashboard">
+                Dashboard
+            </span>
+
+        </a>
+
+    </header>
+
+
+    <!--==================================================
+    PAGE CONTENT
+    ==================================================-->
+
+    <section class="post-job-container">
+
+
+        <div class="page-heading">
+
+            <h2 data-translate="postJob.title">
+                Post a New Job
+            </h2>
+
+            <p data-translate="postJob.description">
+                Create a professional job listing and reach qualified candidates.
+            </p>
+
+        </div>
+
+
+        <!--==================================================
+        JOB FORM
+        ==================================================-->
+
+        <form id="postJobForm"
+              class="job-form">
+
+
+            <!-- JOB TITLE -->
+
+            <div class="form-group">
+
+                <label for="jobTitle"
+                       data-translate="postJob.jobTitle">
+
+                    Job Title
+
+                </label>
+
+
+                <input
+                        type="text"
+                        id="jobTitle"
+                        name="jobTitle"
+                        data-translate-placeholder="postJob.jobTitlePlaceholder"
+                        placeholder="e.g. Construction Labourer"
+                        required>
+
+            </div>
+
+
+            <!-- COMPANY -->
+
+            <div class="form-group">
+
+                <label for="company"
+                       data-translate="postJob.company">
+
+                    Company
+
+                </label>
+
+
+                <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        data-translate-placeholder="postJob.companyPlaceholder"
+                        placeholder="Company name"
+                        required>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="form-group">
+
+                <label for="city"
+                       data-translate="postJob.location">
+
+                    Location
+
+                </label>
+
+
+                <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        data-translate-placeholder="postJob.locationPlaceholder"
+                        placeholder="e.g. London"
+                        required>
+
+            </div>
+
+
+            <!-- SALARY -->
+
+            <div class="form-group">
+
+                <label for="salary"
+                       data-translate="postJob.salary">
+
+                    Salary
+
+                </label>
+
+
+                <input
+                        type="text"
+                        id="salary"
+                        name="salary"
+                        data-translate-placeholder="postJob.salaryPlaceholder"
+                        placeholder="e.g. £18/hour"
+                        required>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="form-group">
+
+                <label for="category"
+                       data-translate="postJob.category">
+
+                    Category
+
+                </label>
+
+
+                <select
+                        id="category"
+                        name="category"
+                        required>
+
+                    <option
+                            value=""
+                            data-translate="postJob.selectCategory">
+
+                        Select a category
+
+                    </option>
+
+
+                    <option
+                            value="Construction"
+                            data-translate="categories.construction">
+
+                        Construction
+
+                    </option>
+
+
+                    <option
+                            value="Warehouse"
+                            data-translate="categories.warehouse">
+
+                        Warehouse
+
+                    </option>
+
+
+                    <option
+                            value="Hospitality"
+                            data-translate="categories.hospitality">
+
+                        Hospitality
+
+                    </option>
+
+
+                    <option
+                            value="Cleaning"
+                            data-translate="categories.cleaning">
+
+                        Cleaning
+
+                    </option>
+
+
+                    <option
+                            value="Driving"
+                            data-translate="categories.driving">
+
+                        Driving
+
+                    </option>
+
+
+                    <option
+                            value="Healthcare"
+                            data-translate="categories.healthcare">
+
+                        Healthcare
+
+                    </option>
+
+
+                    <option
+                            value="Other"
+                            data-translate="categories.other">
+
+                        Other
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group full-width">
+
+                <label for="description"
+                       data-translate="postJob.jobDescription">
+
+                    Job Description
+
+                </label>
+
+
+                <textarea
+                        id="description"
+                        name="description"
+                        rows="7"
+                        data-translate-placeholder="postJob.descriptionPlaceholder"
+                        placeholder="Describe the responsibilities, requirements and other important details..."
+                        required></textarea>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <div class="form-actions">
+
+                <button
+                        type="submit"
+                        class="post-job-btn"
+                        id="postJobBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    <span data-translate="postJob.publish">
+
+                        Publish Job
+
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+</main>
+
+
+<!--==================================================
+GLOBAL TRANSLATION SYSTEM
+==================================================-->
+
+<script
+        type="module"
+        src="translations.js">
+</script>
+
+
+<!--==================================================
+POST JOB JAVASCRIPT
+==================================================-->
+
+<script
+        type="module"
+        src="post-job.js">
+</script>
+
+
+</body>
+
+</html>

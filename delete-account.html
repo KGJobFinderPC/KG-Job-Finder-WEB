@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="KG Job Finder Account Deletion Request">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <title>
+        Delete Account | KG Job Finder
+    </title>
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #050505 0%,
+                    #0b0b0b 50%,
+                    #15110a 100%
+                );
+
+            color: #e5e7eb;
+
+            min-height: 100vh;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================================
+           PAGE
+        ========================================== */
+
+        .page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            padding:
+                40px 20px 60px;
+
+        }
+
+
+        .container {
+
+            width:
+                min(900px, 100%);
+
+            margin:
+                0 auto;
+
+        }
+
+
+        /* =========================================
+           BRAND
+        ========================================== */
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 14px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .brand-mark {
+
+            width: 58px;
+
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd84d,
+                    #c89b22
+                );
+
+            color: #111111;
+
+            font-size: 21px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(255, 216, 77, .18);
+
+        }
+
+
+        .brand-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        .brand-text strong {
+
+            color: #ffffff;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .brand-text span {
+
+            color: #b8a46a;
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        /* =========================================
+           CARD
+        ========================================== */
+
+        .card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #101010,
+                    #111111 55%,
+                    #18140b
+                );
+
+            border:
+                1px solid
+                rgba(255, 216, 77, .16);
+
+            border-radius: 22px;
+
+            padding: 45px;
+
+            box-shadow:
+                0 35px 90px
+                rgba(0, 0, 0, .65);
+
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================== */
+
+        .header {
+
+            text-align: center;
+
+            padding-bottom: 30px;
+
+            margin-bottom: 30px;
+
+            border-bottom:
+                1px solid
+                rgba(255, 216, 77, .12);
+
+        }
+
+
+        .eyebrow {
+
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            color: #ffd84d;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        h1 {
+
+            color: #ffffff;
+
+            font-size: 36px;
+
+            line-height: 1.2;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .subtitle {
+
+            max-width: 650px;
+
+            margin:
+                0 auto;
+
+            color: #9ca3af;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================================
+           SECTIONS
+        ========================================== */
+
+        .section {
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .section:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        h2 {
+
+            color: #ffd84d;
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        p {
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        ul {
+
+            margin:
+                10px 0 15px 25px;
+
+        }
+
+
+        li {
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        strong {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================================
+           EMAIL BOX
+        ========================================== */
+
+        .email-box {
+
+            margin:
+                25px 0;
+
+            padding:
+                25px;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(255, 216, 77, .25);
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 216, 77, .045);
+
+        }
+
+
+        .email-label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #9ca3af;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .email {
+
+            display: inline-block;
+
+            color: #ffd84d;
+
+            font-size: 21px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            word-break: break-word;
+
+        }
+
+
+        .email:hover {
+
+            text-decoration:
+                underline;
+
+        }
+
+
+        .email-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-top: 16px;
+
+            padding:
+                11px 20px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd84d,
+                    #c89b22
+                );
+
+            color: #111111;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            text-decoration: none;
+
+            transition:
+                .2s ease;
+
+        }
+
+
+        .email-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(255, 216, 77, .18);
+
+        }
+
+
+        /* =========================================
+           NOTICE
+        ========================================== */
+
+        .notice {
+
+            padding:
+                18px 20px;
+
+            margin:
+                20px 0;
+
+            border-left:
+                4px solid
+                #ffd84d;
+
+            border-radius: 8px;
+
+            background:
+                rgba(255, 216, 77, .06);
+
+        }
+
+
+        .notice p {
+
+            margin: 0;
+
+        }
+
+
+        /* =========================================
+           DATA LIST
+        ========================================== */
+
+        .data-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 18px;
+
+        }
+
+
+        .data-item {
+
+            padding:
+                16px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.07);
+
+            border-radius: 11px;
+
+            background:
+                rgba(255,255,255,.025);
+
+        }
+
+
+        .data-item strong {
+
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: #ffd84d;
+
+            font-size: 13px;
+
+        }
+
+
+        .data-item span {
+
+            color: #94a3b8;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        .footer {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.08);
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (
+            max-width: 700px
+        ) {
+
+            .page {
+
+                padding:
+                    20px 14px 40px;
+
+            }
+
+
+            .card {
+
+                padding:
+                    28px 20px;
+
+                border-radius: 17px;
+
+            }
+
+
+            h1 {
+
+                font-size: 28px;
+
+            }
+
+
+            h2 {
+
+                font-size: 18px;
+
+            }
+
+
+            p,
+            li {
+
+                font-size: 13px;
+
+            }
+
+
+            .data-list {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .email {
+
+                font-size: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <div class="container">
+
+
+        <!-- =====================================
+             BRAND
+        ====================================== -->
+
+        <div class="brand">
+
+
+            <div class="brand-mark">
+                KG
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    JOB FINDER
+                </strong>
+
+                <span>
+                    KG JOB FINDER
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             MAIN CARD
+        ====================================== -->
+
+        <main class="card">
+
+
+            <!-- =================================
+                 HEADER
+            ================================== -->
+
+            <header class="header">
+
+                <span class="eyebrow">
+                    KG JOB FINDER
+                </span>
+
+
+                <h1>
+                    Delete Your Account
+                </h1>
+
+
+                <p class="subtitle">
+                    You can request the deletion of your
+                    KG Job Finder account and associated
+                    personal data by contacting us by email.
+                </p>
+
+            </header>
+
+
+
+            <!-- =================================
+                 1. REQUEST DELETION
+            ================================== -->
+
+            <section class="section">
+
+                <h2>
+                    1. How to Request Account Deletion
+                </h2>
+
+
+                <p>
+                    If you want to delete your KG Job Finder
+                    account and associated personal data,
+                    send an account deletion request to:
+                </p>
+
+
+                <div class="email-box">
+
+                    <span class="email-label">
+                        Account Deletion Email
+                    </span>
+
+
+                    <a
+                        class="email"
+                        href="mailto:kgjobfinder@gmail.com?subject=KG%20Job%20Finder%20-%20Account%20Deletion%20Request"
+                    >
+                        kgjobfinder@gmail.com
+                    </a>
+
+
+                    <br>
+
+
+                    <a
+                        class="email-button"
+                        href="mailto:kgjobfinder@gmail.com?subject=KG%20Job%20Finder%20-%20Account%20Deletion%20Request"
+                    >
+                        Request Account Deletion
+                    </a>
+
+                </div>
+
+
+                <p>
+                    Please send the request from the email
+                    address associated with your KG Job Finder
+                    account whenever possible.
+                </p>
+
+
+                <p>
+                    Your request should include enough information
+                    for us to identify the account that you want
+                    to delete.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 2. WHAT WILL BE DELETED
+            ================================== -->
+
+            <section class="section">
+
+                <h2>
+                    2. Data That May Be Deleted
+                </h2>
+
+
+                <p>
+                    When an account deletion request is approved,
+                    we will delete or remove personal data
+                    associated with the account, subject to
+                    applicable legal, security and operational
+                    requirements.
+                </p>
+
+
+                <div class="data-list">
+
+
+                    <div class="data-item">
+
+                        <strong>
+                            Account Information
+                        </strong>
+
+                        <span>
+                            Name, email address and account-related
+                            information.
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-item">
+
+                        <strong>
+                            Profile Information
+                        </strong>
+
+                        <span>
+                            Candidate or employer profile information.
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-item">
+
+                        <strong>
+                            Job Applications
+                        </strong>
+
+                        <span>
+                            Applications associated with the account,
+                            where applicable.
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-item">
+
+                        <strong>
+                            CV Files
+                        </strong>
+
+                        <span>
+                            CV files and associated uploaded
+                            information.
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-item">
+
+                        <strong>
+                            Cover Letters
+                        </strong>
+
+                        <span>
+                            Cover letters associated with submitted
+                            applications.
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-item">
+
+                        <strong>
+                            Other Account Data
+                        </strong>
+
+                        <span>
+                            Other personal information associated
+                            with the account, where applicable.
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 3. WHAT MAY BE RETAINED
+            ================================== -->
+
+            <section class="section">
+
+                <h2>
+                    3. Information That May Be Retained
+                </h2>
+
+
+                <p>
+                    Some information may need to be retained
+                    when required by applicable law or when
+                    reasonably necessary for legitimate purposes.
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        Information required to comply with
+                        legal obligations.
+                    </li>
+
+                    <li>
+                        Information required for security,
+                        fraud prevention or abuse prevention.
+                    </li>
+
+                    <li>
+                        Information necessary to resolve disputes.
+                    </li>
+
+                    <li>
+                        Information that must be retained for
+                        legitimate legal or regulatory reasons.
+                    </li>
+
+                </ul>
+
+
+                <p>
+                    When information is retained, it will only
+                    be kept for as long as reasonably necessary
+                    for the applicable purpose.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 4. VERIFICATION
+            ================================== -->
+
+            <section class="section">
+
+                <h2>
+                    4. Account Verification
+                </h2>
+
+
+                <p>
+                    For security purposes, we may need to verify
+                    that an account deletion request was made by
+                    the account owner.
+                </p>
+
+
+                <p>
+                    We may request additional information when
+                    reasonably necessary to verify the request
+                    before deleting an account.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 5. PROCESSING TIME
+            ================================== -->
+
+            <section class="section">
+
+                <h2>
+                    5. Processing Your Request
+                </h2>
+
+
+                <p>
+                    After receiving a valid account deletion
+                    request, KG Job Finder will review the request
+                    and take the appropriate steps to process it.
+                </p>
+
+
+                <p>
+                    Processing time may vary depending on the
+                    information that needs to be verified and
+                    the systems involved.
+                </p>
+
+
+                <div class="notice">
+
+                    <p>
+                        <strong>
+                            Important:
+                        </strong>
+
+                        Sending an email does not automatically
+                        delete the account. The request must first
+                        be reviewed and verified.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 6. SUPABASE
+            ================================== -->
+
+            <section class="section">
+
+                <h2>
+                    6. Third-Party Infrastructure
+                </h2>
+
+
+                <p>
+                    KG Job Finder uses Supabase for parts of its
+                    application infrastructure, including
+                    authentication, database functionality and
+                    file storage.
+                </p>
+
+
+                <p>
+                    Account information, profile information,
+                    applications and uploaded CV files may be
+                    stored using this infrastructure.
+                </p>
+
+
+                <p>
+                    When an account deletion request is processed,
+                    applicable account data stored within the
+                    KG Job Finder systems may also be removed,
+                    subject to applicable retention requirements.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 7. CONTACT
+            ================================== -->
+
+            <section class="section">
+
+                <h2>
+                    7. Contact
+                </h2>
+
+
+                <p>
+                    If you have questions about account deletion,
+                    personal data, or this deletion process,
+                    contact KG Job Finder using the email address
+                    below.
+                </p>
+
+
+                <div class="email-box">
+
+                    <span class="email-label">
+                        KG Job Finder
+                    </span>
+
+
+                    <a
+                        class="email"
+                        href="mailto:kgjobfinder@gmail.com"
+                    >
+                        kgjobfinder@gmail.com
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 FOOTER
+            ================================== -->
+
+            <footer class="footer">
+
+                KG Job Finder
+
+                &nbsp;•&nbsp;
+
+                Account Deletion
+
+                &nbsp;•&nbsp;
+
+                © 2026 KG Job Finder
+
+            </footer>
+
+
+        </main>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

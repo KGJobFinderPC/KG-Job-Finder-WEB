@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Apply</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+
+        /*==================================================
+                            RESET
+        ==================================================*/
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /*==================================================
+                            PAGE BACKGROUND
+        ==================================================*/
+
+        html,
+        body {
+
+            width: 100%;
+
+            min-height: 100%;
+
+            margin: 0;
+
+            padding: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e293b,
+                    #312e81
+                );
+
+            background-attachment: fixed;
+
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: "Poppins", sans-serif;
+
+            color: #ffffff;
+
+        }
+
+
+        /*==================================================
+                            PAGE
+        ==================================================*/
+
+        .page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e293b,
+                    #312e81
+                );
+
+        }
+
+
+        /*==================================================
+                            TOP BAR
+        ==================================================*/
+
+        .top-bar {
+
+            max-width: 1100px;
+
+            margin: 0 auto 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        /*==================================================
+                            LOGO
+        ==================================================*/
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .logo h1 {
+
+            color: #ffd700;
+
+            font-size: 32px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .logo span {
+
+            color: #ffffff;
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        /*==================================================
+                            BACK BUTTON
+        ==================================================*/
+
+        .back-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 10px 16px;
+
+            border: 1px solid rgba(255, 215, 0, 0.35);
+
+            border-radius: 10px;
+
+            color: #ffd700;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .back-btn:hover {
+
+            background:
+                rgba(255, 215, 0, 0.10);
+
+        }
+
+
+        /*==================================================
+                        APPLICATION CONTAINER
+        ==================================================*/
+
+        .apply-container {
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(15, 23, 42, 0.75);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.25);
+
+        }
+
+
+        /*==================================================
+                            HEADING
+        ==================================================*/
+
+        .page-heading {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .page-heading span {
+
+            color: #ffd700;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            font-weight: 700;
+
+        }
+
+
+        .page-heading h2 {
+
+            margin-top: 7px;
+
+            font-size: 30px;
+
+        }
+
+
+        .page-heading p {
+
+            margin-top: 7px;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+
+        }
+
+
+        /*==================================================
+                            JOB BOX
+        ==================================================*/
+
+        .job-box {
+
+            margin-bottom: 25px;
+
+            padding: 18px;
+
+            border-radius: 13px;
+
+            background:
+                rgba(255, 215, 0, 0.06);
+
+            border:
+                1px solid rgba(255, 215, 0, 0.18);
+
+        }
+
+
+        .job-box small {
+
+            color: #94a3b8;
+
+            font-size: 10px;
+
+        }
+
+
+        .job-box h3 {
+
+            margin-top: 5px;
+
+            color: #ffd700;
+
+            font-size: 20px;
+
+        }
+
+
+        /*==================================================
+                            FORM GRID
+        ==================================================*/
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
+
+        }
+
+
+        .input-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+
+        }
+
+
+        .input-group.full {
+
+            grid-column: 1 / -1;
+
+        }
+
+
+        /*==================================================
+                            LABELS
+        ==================================================*/
+
+        label {
+
+            color: #cbd5e1;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+        }
+
+
+        /*==================================================
+                        INPUTS / TEXTAREA
+        ==================================================*/
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.10);
+
+            border-radius: 10px;
+
+            outline: none;
+
+            background:
+                rgba(2, 6, 23, 0.65);
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+        }
+
+
+        input:focus,
+        textarea:focus {
+
+            border-color:
+                rgba(255, 215, 0, 0.60);
+
+        }
+
+
+        input::placeholder,
+        textarea::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+        /*==================================================
+                            CV FILE
+        ==================================================*/
+
+        input[type="file"] {
+
+            padding: 10px;
+
+            cursor: pointer;
+
+        }
+
+
+        .file-info {
+
+            color: #94a3b8;
+
+            font-size: 10px;
+
+        }
+
+
+        /*==================================================
+                        SUBMIT AREA
+        ==================================================*/
+
+        .submit-area {
+
+            margin-top: 25px;
+
+        }
+
+
+        .submit-btn {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 11px;
+
+            background: #ffd700;
+
+            color: #0f172a;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .submit-btn:hover {
+
+            transform: translateY(-1px);
+
+            filter: brightness(1.05);
+
+        }
+
+
+        .submit-btn:disabled {
+
+            opacity: 0.6;
+
+            cursor: not-allowed;
+
+            transform: none;
+
+        }
+
+
+        /*==================================================
+                            MESSAGE
+        ==================================================*/
+
+        .message {
+
+            margin-top: 15px;
+
+            text-align: center;
+
+            font-size: 12px;
+
+            min-height: 18px;
+
+        }
+
+
+        .success {
+
+            color: #86efac;
+
+        }
+
+
+        .error {
+
+            color: #fca5a5;
+
+        }
+
+
+        /*==================================================
+                            MOBILE
+        ==================================================*/
+
+        @media (max-width: 700px) {
+
+            .page {
+
+                min-height: 100vh;
+
+                padding: 18px;
+
+            }
+
+
+            .top-bar {
+
+                align-items: flex-start;
+
+                gap: 15px;
+
+                flex-direction: column;
+
+            }
+
+
+            .apply-container {
+
+                padding: 20px;
+
+            }
+
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .input-group.full {
+
+                grid-column: auto;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+    <!-- HEADER -->
+
+    <header class="top-bar">
+
+        <div class="logo">
+
+            <h1>KG</h1>
+
+            <span>
+                    JOB FINDER
+                </span>
+
+        </div>
+
+
+        <a href="jobs.html"
+           class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Jobs
+
+        </a>
+
+    </header>
+
+
+    <!-- APPLICATION -->
+
+    <section class="apply-container">
+
+
+        <div class="page-heading">
+
+                <span>
+                    JOB APPLICATION
+                </span>
+
+            <h2>
+                Apply for this position
+            </h2>
+
+            <p>
+                Complete your information and submit your application.
+            </p>
+
+        </div>
+
+
+        <!-- SELECTED JOB -->
+
+        <div class="job-box">
+
+            <small>
+                APPLY FOR
+            </small>
+
+            <h3 id="jobTitle">
+                Loading job...
+            </h3>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form id="applicationForm">
+
+
+            <div class="form-grid">
+
+
+                <!-- NAME -->
+
+                <div class="input-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="input-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                            required>
+
+                </div>
+
+
+                <!-- CITY -->
+
+                <div class="input-group">
+
+                    <label for="city">
+                        City
+                    </label>
+
+                    <input
+                            type="text"
+                            id="city"
+                            placeholder="Enter your city"
+                            required>
+
+                </div>
+
+
+                <!-- CV -->
+
+                <div class="input-group full">
+
+                    <label for="cv">
+                        CV
+                    </label>
+
+                    <input
+                            type="file"
+                            id="cv"
+                            accept=".pdf,.doc,.docx"
+                            required>
+
+                    <span class="file-info">
+                            Accepted formats: PDF, DOC, DOCX
+                        </span>
+
+                </div>
+
+
+                <!-- COVER LETTER -->
+
+                <div class="input-group full">
+
+                    <label for="coverLetter">
+                        Cover Letter
+                    </label>
+
+                    <textarea
+                            id="coverLetter"
+                            rows="6"
+                            placeholder="Write your cover letter..."></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <div class="submit-area">
+
+                <button
+                        type="submit"
+                        id="submitApplication"
+                        class="submit-btn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Submit Application
+
+                </button>
+
+
+                <div
+                        id="message"
+                        class="message">
+                </div>
+
+            </div>
+
+
+        </form>
+
+
+    </section>
+
+
+</main>
+
+
+<script
+        type="module"
+        src="apply.js?v=2">
+</script>
+
+
+</body>
+
+</html>

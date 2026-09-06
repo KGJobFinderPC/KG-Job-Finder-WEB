@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Employer Dashboard</title>
+
+    <link rel="stylesheet"
+          href="employer-dashboard.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<main class="employer-page">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <h1>KG</h1>
+
+            <span data-translate="brand.jobFinder">
+                JOB FINDER
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <section class="dashboard-content">
+
+        <div class="welcome">
+
+            <p class="small-title"
+               data-translate="employer.area">
+                EMPLOYER AREA
+            </p>
+
+            <h2 data-translate="employer.dashboard">
+                Employer Dashboard
+            </h2>
+
+            <p data-translate="employer.description">
+                Manage your jobs, applications and company profile.
+            </p>
+
+        </div>
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+
+            <!-- POST JOB -->
+
+            <button
+                    class="menu-button"
+                    id="postJobBtn"
+                    type="button">
+
+                <i class="fa-solid fa-plus"></i>
+
+                <span data-translate="employer.postJob">
+                    Post Job
+                </span>
+
+            </button>
+
+
+            <!-- MY JOBS -->
+
+            <button
+                    class="menu-button"
+                    id="myJobsBtn"
+                    type="button">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <span data-translate="employer.myJobs">
+                    My Jobs
+                </span>
+
+            </button>
+
+
+            <!-- APPLICATIONS -->
+
+            <button
+                    class="menu-button"
+                    id="applicationsBtn"
+                    type="button">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span data-translate="employer.applications">
+                    Applications
+                </span>
+
+            </button>
+
+
+            <!-- PROFILE -->
+
+            <button
+                    class="menu-button"
+                    id="profileBtn"
+                    type="button">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span data-translate="employer.myProfile">
+                    My Profile
+                </span>
+
+            </button>
+
+
+            <!-- LOGOUT -->
+
+            <button
+                    class="menu-button logout-button"
+                    id="logoutBtn"
+                    type="button">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span data-translate="employer.logout">
+                    Logout
+                </span>
+
+            </button>
+
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+<!-- GLOBAL TRANSLATION SYSTEM -->
+
+<script
+        type="module"
+        src="translations.js">
+</script>
+
+
+<!-- EMPLOYER DASHBOARD FUNCTIONS -->
+
+<script
+        type="module"
+        src="employer-dashboard.js">
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Login</title>
+
+    <link rel="stylesheet"
+          href="login.css">
+
+    <link rel="stylesheet"
+          href="translations.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<img
+    class="login-background-image"
+    src="images/KG-job-finder-login-bg.png"
+    alt=""
+>
+
+
+<!-- ==================================================
+     BACKGROUND
+     ================================================== -->
+
+<div class="background-glow glow-left"></div>
+
+<div class="background-glow glow-right"></div>
+
+
+<!-- ==================================================
+     TOP BRAND
+     ================================================== -->
+
+<div class="top-brand">
+
+    <div class="top-logo">
+
+        <i class="fa-solid fa-crown"></i>
+
+        <span>KG</span>
+
+    </div>
+
+
+    <div class="top-brand-text">
+
+        <strong data-translate="brand.jobFinder">
+            JOB FINDER
+        </strong>
+
+        <small data-translate="brand.findFuture">
+            FIND YOUR FUTURE
+        </small>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     MAIN LOGIN STAGE
+     ================================================== -->
+
+<main class="login-stage">
+
+
+    <!-- ==================================================
+         CANDIDATE SIDE
+         ================================================== -->
+
+    <section class="side-panel candidate-panel">
+
+
+        <div class="side-icon">
+
+            <i class="fa-solid fa-user-tie"></i>
+
+        </div>
+
+
+        <span class="side-label"
+              data-translate="login.candidate">
+
+            CANDIDATE
+
+        </span>
+
+
+        <h2>
+
+            <span data-translate="login.candidateTitle">
+                Build Your
+            </span>
+
+            <span data-translate="login.candidateHighlight">
+                Career
+            </span>
+
+        </h2>
+
+
+        <p data-translate="login.candidateText">
+
+            Discover opportunities,
+            apply for jobs and take
+            the next step in your career.
+
+        </p>
+
+
+        <div class="connection-line">
+
+            <span></span>
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            <span></span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LOGIN CARD
+         ================================================== -->
+
+    <section class="login-card">
+
+
+        <!-- ==================================================
+             LOGIN LOGO
+             ================================================== -->
+
+        <div class="login-logo">
+
+            <div class="login-emblem">
+
+                <i class="fa-solid fa-crown login-crown"></i>
+
+                <div class="login-shield">
+
+                    <span>KG</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="login-brand-name">
+
+                <strong data-translate="brand.jobFinder">
+                    JOB FINDER
+                </strong>
+
+                <small data-translate="brand.futureStarts">
+                    YOUR FUTURE STARTS HERE
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             HEADING
+             ================================================== -->
+
+        <div class="login-heading">
+
+            <span class="heading-label"
+                  data-translate="login.memberLogin">
+
+                MEMBER LOGIN
+
+            </span>
+
+
+            <h1 data-translate="login.welcome">
+
+                Welcome Back
+
+            </h1>
+
+
+            <p data-translate="login.subtitle">
+
+                Sign in to continue to KG Job Finder.
+
+            </p>
+
+        </div>
+
+
+        <!-- ==================================================
+             LOGIN FORM
+             ================================================== -->
+
+        <form id="loginForm">
+
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <label for="email"
+                       data-translate="login.email">
+
+                    Email Address
+
+                </label>
+
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+
+                    <input
+                            type="email"
+                            id="email"
+                            data-translate-placeholder="login.email"
+                            placeholder="Email Address"
+                            autocomplete="email"
+                            required>
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+
+                <label for="password"
+                       data-translate="login.password">
+
+                    Password
+
+                </label>
+
+
+                <div class="input-box password-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+
+                    <input
+                            type="password"
+                            id="password"
+                            data-translate-placeholder="login.password"
+                            placeholder="Password"
+                            autocomplete="current-password"
+                            required>
+
+
+                    <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="Show password">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTIONS -->
+
+            <div class="login-options">
+
+
+                <label class="remember">
+
+                    <input
+                            type="checkbox"
+                            id="rememberMe">
+
+                    <span class="checkmark"></span>
+
+                    <span data-translate="login.remember">
+
+                        Remember Me
+
+                    </span>
+
+                </label>
+
+
+                <a href="forgot-password.html"
+                   class="forgot-link"
+                   data-translate="login.forgot">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <button
+                    type="submit"
+                    class="login-button">
+
+                <span data-translate="login.login">
+
+                    Login
+
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <!-- REGISTER -->
+
+            <div class="register-area">
+
+                <span data-translate="login.noAccount">
+
+                    Don't have an account?
+
+                </span>
+
+
+                <a href="register.html"
+                   data-translate="login.createAccount">
+
+                    Create Account
+
+                </a>
+
+            </div>
+
+
+        </form>
+
+
+        <!-- FOOTER -->
+
+        <div class="login-footer">
+
+            <span></span>
+
+            <small data-translate="brand.jobFinder">
+
+                KG JOB FINDER
+
+            </small>
+
+            <span></span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         EMPLOYER SIDE
+         ================================================== -->
+
+    <section class="side-panel employer-panel">
+
+
+        <div class="side-icon">
+
+            <i class="fa-solid fa-building"></i>
+
+        </div>
+
+
+        <span class="side-label"
+              data-translate="login.employer">
+
+            EMPLOYER
+
+        </span>
+
+
+        <h2>
+
+            <span data-translate="login.employerTitle">
+
+                Find The
+
+            </span>
+
+            <span data-translate="login.employerHighlight">
+
+                Right Talent
+
+            </span>
+
+        </h2>
+
+
+        <p data-translate="login.employerText">
+
+            Connect with candidates,
+            discover talent and build
+            your future team.
+
+        </p>
+
+
+        <div class="connection-line">
+
+            <span></span>
+
+            <i class="fa-solid fa-users"></i>
+
+            <span></span>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- ==================================================
+     TRANSLATION SYSTEM
+     ================================================== -->
+
+<script type="module"
+        src="translations.js"></script>
+
+
+<!-- ==================================================
+     EXISTING LOGIN JAVASCRIPT
+     ================================================== -->
+
+<script type="module"
+        src="login.js"></script>
+
+
+</body>
+
+</html>

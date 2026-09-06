@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Edit Job</title>
+
+    <link rel="stylesheet"
+          href="edit-job.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+    <main class="edit-job-page">
+
+
+        <!-- HEADER -->
+
+        <header class="top-bar">
+
+            <div class="logo">
+
+                <h1>KG</h1>
+
+                <span>JOB FINDER</span>
+
+            </div>
+
+
+            <a href="my-jobs.html"
+               class="back-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                My Jobs
+
+            </a>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="edit-job-container">
+
+
+            <div class="page-heading">
+
+                <h2>Edit Job</h2>
+
+                <p>
+                    Update the information for your job listing.
+                </p>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="editJobForm"
+                  class="job-form">
+
+
+                <!-- JOB TITLE -->
+
+                <div class="form-group">
+
+                    <label for="jobTitle">
+                        Job Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jobTitle"
+                        name="jobTitle"
+                        placeholder="Job title"
+                        required>
+
+                </div>
+
+
+                <!-- COMPANY -->
+
+                <div class="form-group">
+
+                    <label for="company">
+                        Company
+                    </label>
+
+                    <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        placeholder="Company name"
+                        required>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label for="city">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        placeholder="Location"
+                        required>
+
+                </div>
+
+
+                <!-- SALARY -->
+
+                <div class="form-group">
+
+                    <label for="salary">
+                        Salary
+                    </label>
+
+                    <input
+                        type="text"
+                        id="salary"
+                        name="salary"
+                        placeholder="Salary"
+                        required>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group full-width">
+
+                    <label for="description">
+                        Job Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="8"
+                        placeholder="Job description"
+                        required></textarea>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="form-actions">
+
+                    <a href="my-jobs.html"
+                       class="cancel-btn">
+
+                        Cancel
+
+                    </a>
+
+
+                    <button
+                        type="submit"
+                        id="saveJobBtn"
+                        class="save-job-btn">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script type="module"
+            src="edit-job.js"></script>
+
+</body>
+
+</html>

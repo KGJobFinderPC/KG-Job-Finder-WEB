@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Dashboard</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+
+        /* ADMIN DASHBOARD COLORS ONLY */
+
+        .admin-mode .brand h2,
+        .admin-mode .brand > span,
+        .admin-mode #welcomeUser,
+        .admin-mode #dashboardType,
+        .admin-mode #adminHero .hero-badge,
+        .admin-mode #adminHero h2,
+        .admin-mode #adminHero h2 span,
+        .admin-mode .stat-card .stat-info strong,
+        .admin-mode #adminQuickActions .section-label,
+        .admin-mode #adminQuickActions h2,
+        .admin-mode #adminQuickActions .action-card h3,
+        .admin-mode .applications-card .section-label,
+        .admin-mode .applications-card h2,
+        .admin-mode #infoHeading {
+
+            color: #ffd84d !important;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+    <!-- ==================================================
+         SIDEBAR
+         ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="brand">
+
+            <div class="brand-emblem">
+
+                <i class="fa-solid fa-crown brand-crown"></i>
+
+                <div class="brand-shield">
+                    <span>KG</span>
+                </div>
+
+                <div class="brand-flourish left">
+                    ✦
+                </div>
+
+                <div class="brand-flourish right">
+                    ✦
+                </div>
+
+            </div>
+
+
+            <h2>
+                KG
+            </h2>
+
+            <span>
+                JOB FINDER
+            </span>
+
+            <small>
+                FIND YOUR FUTURE
+            </small>
+
+        </div>
+
+
+        <!-- SIDEBAR MENU -->
+
+        <nav class="sidebar-menu">
+
+
+            <a
+                    href="dashboard.html"
+                    class="menu-item active">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                    href="jobs.html"
+                    class="menu-item">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <span>
+                    Find Jobs
+                </span>
+
+            </a>
+
+
+            <a
+                    href="applications.html"
+                    class="menu-item">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <span>
+                    My Applications
+                </span>
+
+            </a>
+
+
+            <a
+                    href="profile.html"
+                    class="menu-item">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+    <!-- ==================================================
+         MAIN CONTENT
+         ================================================== -->
+
+    <main class="dashboard-content">
+
+
+        <!-- ==================================================
+             TOP BAR
+             ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="welcome">
+
+                <span
+                        class="eyebrow"
+                        id="dashboardType">
+
+                    CANDIDATE DASHBOARD
+
+                </span>
+
+
+                <h1 id="welcomeUser">
+                    Welcome back
+                </h1>
+
+
+                <p id="dashboardSubtitle">
+                    Find your next opportunity.
+                </p>
+
+            </div>
+
+
+            <div class="top-actions">
+
+
+                <div class="user-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <button
+                        id="logoutBtn"
+                        class="dashboard-logout"
+                        type="button">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- ==================================================
+             CANDIDATE HERO
+             ================================================== -->
+
+        <section
+                id="candidateHero"
+                class="hero-card">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    KG JOB FINDER
+
+                </div>
+
+
+                <h2>
+
+                    Build Your Future
+
+                    <span>
+                        With the Right Opportunity
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Discover available jobs, manage your applications
+                    and keep your professional profile ready for employers.
+
+                </p>
+
+
+                <!-- SEARCH -->
+
+                <div class="dashboard-search-area">
+
+
+                    <div class="dashboard-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                                type="text"
+                                id="dashboardSearch"
+                                placeholder="Search jobs...">
+
+                    </div>
+
+
+                    <button
+                            type="button"
+                            id="searchJobsBtn"
+                            class="dashboard-search-button">
+
+                        Search
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- HERO ACTIONS -->
+
+                <div class="hero-actions">
+
+
+                    <a
+                            href="jobs.html"
+                            class="primary-btn">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        Find Jobs
+
+                    </a>
+
+
+                    <a
+                            href="profile.html"
+                            class="secondary-btn">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        My Profile
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="hero-emblem">
+
+                <i class="fa-solid fa-crown"></i>
+
+
+                <div class="hero-shield">
+                    KG
+                </div>
+
+
+                <span>
+                    JOB FINDER
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================================================
+             ADMIN HERO
+             ================================================== -->
+
+        <section
+                id="adminHero"
+                class="hero-card"
+                style="display:none;">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    ADMIN CONTROL
+
+                </div>
+
+
+                <h2>
+
+                    Welcome to
+
+                    <span>
+                        Admin Control Center
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Manage jobs, review applications and control
+                    the KG Job Finder platform from one central place.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <a
+                            href="admin.html"
+                            class="primary-btn">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Open Admin Control Center
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="hero-emblem">
+
+                <i class="fa-solid fa-crown"></i>
+
+
+                <div class="hero-shield">
+                    KG
+                </div>
+
+
+                <span>
+                    ADMIN
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================================================
+             STATISTICS
+             ================================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <span>
+                        Available Jobs
+                    </span>
+
+                    <strong id="jobsCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <span>
+                        My Applications
+                    </span>
+
+                    <strong id="applicationsCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <span>
+                        Profile
+                    </span>
+
+                    <strong>
+                        Active
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-file"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <span>
+                        CV
+                    </span>
+
+                    <strong>
+                        Ready
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================================================
+             CANDIDATE QUICK ACTIONS
+             ================================================== -->
+
+        <section
+                id="candidateQuickActions"
+                class="content-card">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <span class="section-label">
+                        QUICK ACCESS
+                    </span>
+
+
+                    <h2>
+                        What do you want to do?
+                    </h2>
+
+                </div>
+
+
+                <i class="fa-solid fa-bolt"></i>
+
+
+            </div>
+
+
+            <div class="quick-actions">
+
+
+                <a
+                        href="jobs.html"
+                        class="action-card">
+
+                    <div class="action-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Find Jobs
+                        </h3>
+
+                        <p>
+                            Browse available opportunities.
+                        </p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </a>
+
+
+                <a
+                        href="applications.html"
+                        class="action-card">
+
+                    <div class="action-icon">
+
+                        <i class="fa-solid fa-file-circle-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            My Applications
+                        </h3>
+
+                        <p>
+                            Track your submitted applications.
+                        </p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </a>
+
+
+                <a
+                        href="profile.html"
+                        class="action-card">
+
+                    <div class="action-icon">
+
+                        <i class="fa-solid fa-user-pen"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            My Profile
+                        </h3>
+
+                        <p>
+                            Update your personal information.
+                        </p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================================================
+             ADMIN QUICK ACTIONS
+             ================================================== -->
+
+        <section
+                id="adminQuickActions"
+                class="content-card admin-quick-actions">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <span class="section-label">
+                        ADMINISTRATION
+                    </span>
+
+
+                    <h2>
+                        Platform Management
+                    </h2>
+
+                </div>
+
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+
+            </div>
+
+
+            <div class="quick-actions">
+
+
+                <a
+                        href="admin.html"
+                        class="action-card">
+
+                    <div class="action-icon">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Manage Jobs
+                        </h3>
+
+                        <p>
+                            Create, edit and manage job listings.
+                        </p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </a>
+
+
+                <a
+                        href="admin.html"
+                        class="action-card">
+
+                    <div class="action-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Manage Users
+                        </h3>
+
+                        <p>
+                            Review registered platform users.
+                        </p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </a>
+
+
+                <a
+                        href="applications.html"
+                        class="action-card">
+
+                    <div class="action-icon">
+
+                        <i class="fa-solid fa-file-circle-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Review Applications
+                        </h3>
+
+                        <p>
+                            Review submitted job applications.
+                        </p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================================================
+             LOWER SECTION
+             ================================================== -->
+
+        <section class="lower-grid">
+
+
+            <!-- RECENT APPLICATIONS -->
+
+            <div class="content-card applications-card">
+
+
+                <div class="section-heading">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            ACTIVITY
+                        </span>
+
+
+                        <h2>
+                            Recent Applications
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                            href="applications.html"
+                            class="view-all">
+
+                        View All
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                </div>
+
+
+                <div
+                        id="recentApplications"
+                        class="recent-applications">
+
+
+                    <div class="empty-state">
+
+                        <i class="fa-regular fa-file-lines"></i>
+
+                        <p>
+                            No applications yet.
+                        </p>
+
+                        <a href="jobs.html">
+                            Find your first job
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- INFO CARD -->
+
+            <div class="content-card review-card">
+
+
+                <div class="review-title">
+
+                    <i
+                            id="infoIcon"
+                            class="fa-solid fa-star"></i>
+
+                    <span id="infoTitle">
+                        Candidate Experience
+                    </span>
+
+                </div>
+
+
+                <div
+                        id="infoStars"
+                        class="stars">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+                <h2 id="infoHeading">
+
+                    Your next opportunity
+                    starts here.
+
+                </h2>
+
+
+                <p id="infoText">
+
+                    Keep your profile updated, discover new jobs
+                    and manage your applications from one place.
+
+                </p>
+
+
+                <div class="review-line"></div>
+
+
+                <span
+                        id="infoFooter"
+                        class="review-footer">
+
+                    Find. Apply. Succeed.
+
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================================================
+             FOOTER
+             ================================================== -->
+
+        <footer class="footer">
+
+            <span>
+                © 2026 KG Job Finder. All rights reserved.
+            </span>
+
+
+            <span>
+                Find. Apply. Succeed. 👑
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+     ================================================== -->
+
+<script type="module">
+
+    import {
+        supabase,
+        currentSession,
+        logoutUser
+    } from "./supabase.js";
+
+
+    //==================================================
+    // ELEMENTS
+    //==================================================
+
+    const welcomeUser =
+        document.getElementById(
+            "welcomeUser"
+        );
+
+
+    const dashboardType =
+        document.getElementById(
+            "dashboardType"
+        );
+
+
+    const dashboardSubtitle =
+        document.getElementById(
+            "dashboardSubtitle"
+        );
+
+
+    const candidateHero =
+        document.getElementById(
+            "candidateHero"
+        );
+
+
+    const adminHero =
+        document.getElementById(
+            "adminHero"
+        );
+
+
+    const candidateQuickActions =
+        document.getElementById(
+            "candidateQuickActions"
+        );
+
+
+    const adminQuickActions =
+        document.getElementById(
+            "adminQuickActions"
+        );
+
+
+    const jobsCount =
+        document.getElementById(
+            "jobsCount"
+        );
+
+
+    const applicationsCount =
+        document.getElementById(
+            "applicationsCount"
+        );
+
+
+    const recentApplications =
+        document.getElementById(
+            "recentApplications"
+        );
+
+
+    const logoutBtn =
+        document.getElementById(
+            "logoutBtn"
+        );
+
+
+    const dashboardSearch =
+        document.getElementById(
+            "dashboardSearch"
+        );
+
+
+    const searchJobsBtn =
+        document.getElementById(
+            "searchJobsBtn"
+        );
+
+
+    const infoIcon =
+        document.getElementById(
+            "infoIcon"
+        );
+
+
+    const infoTitle =
+        document.getElementById(
+            "infoTitle"
+        );
+
+
+    const infoStars =
+        document.getElementById(
+            "infoStars"
+        );
+
+
+    const infoHeading =
+        document.getElementById(
+            "infoHeading"
+        );
+
+
+    const infoText =
+        document.getElementById(
+            "infoText"
+        );
+
+
+    const infoFooter =
+        document.getElementById(
+            "infoFooter"
+        );
+
+
+    //==================================================
+    // LOAD DASHBOARD
+    //==================================================
+
+    async function loadDashboard() {
+
+
+        const {
+            data: sessionData,
+            error: sessionError
+        } = await currentSession();
+
+
+        if (
+            sessionError ||
+            !sessionData ||
+            !sessionData.session
+        ) {
+
+
+            window.location.replace(
+                "login.html"
+            );
+
+
+            return;
+
+        }
+
+
+        const user =
+            sessionData.session.user;
+
+
+        //==================================================
+        // ACCOUNT TYPE
+        //==================================================
+
+        const accountType =
+            String(
+                user.user_metadata?.account_type ||
+                user.user_metadata?.accountType ||
+                user.user_metadata?.role ||
+                ""
+            ).toLowerCase();
+
+
+        const isAdmin =
+            accountType === "employer" ||
+            accountType === "admin" ||
+            accountType === "administrator";
+
+
+        //==================================================
+        // USER NAME
+        //==================================================
+
+        const userName =
+            user.user_metadata?.name ||
+            user.email ||
+            "Candidate";
+
+
+        welcomeUser.textContent =
+            `Welcome back, ${userName}`;
+
+
+        //==================================================
+        // ADMIN
+        //==================================================
+
+        if (isAdmin) {
+
+
+            document.body.classList.add(
+                "admin-mode"
+            );
+
+
+            dashboardType.textContent =
+                "ADMIN DASHBOARD";
+
+
+            dashboardSubtitle.textContent =
+                "Manage your KG Job Finder platform.";
+
+
+            candidateHero.style.display =
+                "none";
+
+
+            adminHero.style.display =
+                "flex";
+
+
+            candidateQuickActions.style.display =
+                "none";
+
+
+            adminQuickActions.style.display =
+                "block";
+
+
+            infoIcon.className =
+                "fa-solid fa-shield-halved";
+
+
+            infoTitle.textContent =
+                "Administrator";
+
+
+            infoStars.style.display =
+                "none";
+
+
+            infoHeading.textContent =
+                "Your platform is ready.";
+
+
+            infoText.textContent =
+                "Use the Admin Control Center to manage jobs, users and applications from one central location.";
+
+
+            infoFooter.textContent =
+                "Manage. Review. Control.";
+
+        }
+
+
+        //==================================================
+        // CANDIDATE
+        //==================================================
+
+        else {
+
+
+            dashboardType.textContent =
+                "CANDIDATE DASHBOARD";
+
+
+            dashboardSubtitle.textContent =
+                "Find your next opportunity.";
+
+
+            candidateHero.style.display =
+                "flex";
+
+
+            adminHero.style.display =
+                "none";
+
+
+            candidateQuickActions.style.display =
+                "block";
+
+
+            adminQuickActions.style.display =
+                "none";
+
+
+            infoIcon.className =
+                "fa-solid fa-star";
+
+
+            infoTitle.textContent =
+                "Candidate Experience";
+
+
+            infoStars.style.display =
+                "flex";
+
+
+            infoHeading.textContent =
+                "Your next opportunity starts here.";
+
+
+            infoText.textContent =
+                "Keep your profile updated, discover new jobs and manage your applications from one place.";
+
+
+            infoFooter.textContent =
+                "Find. Apply. Succeed.";
+
+        }
+
+
+        //==================================================
+        // JOB COUNT
+        //==================================================
+
+        const {
+            count: jobCount,
+            error: jobsError
+        } = await supabase
+            .from("jobs")
+            .select(
+                "*",
+                {
+                    count: "exact",
+                    head: true
+                }
+            );
+
+
+        if (!jobsError) {
+
+            jobsCount.textContent =
+                jobCount || 0;
+
+        }
+
+
+        //==================================================
+        // APPLICATIONS
+        //==================================================
+
+        const {
+            data: applications,
+            error: applicationsError
+        } = await supabase
+            .from("applications")
+            .select("*")
+            .eq(
+                "user_id",
+                user.id
+            )
+            .order(
+                "created_at",
+                {
+                    ascending: false
+                }
+            );
+
+
+        if (applicationsError) {
+
+            console.error(
+                "Unable to load applications:",
+                applicationsError
+            );
+
+            return;
+
+        }
+
+
+        const applicationList =
+            applications || [];
+
+
+        applicationsCount.textContent =
+            applicationList.length;
+
+
+        renderRecentApplications(
+            applicationList
+        );
+
+    }
+
+
+    //==================================================
+    // RECENT APPLICATIONS
+    //==================================================
+
+    function renderRecentApplications(
+        applications
+    ) {
+
+
+        if (
+            !applications ||
+            applications.length === 0
+        ) {
+
+
+            recentApplications.innerHTML = `
+
+                <div class="empty-state">
+
+                    <i class="fa-regular fa-file-lines"></i>
+
+                    <p>
+                        No applications yet.
+                    </p>
+
+                    <a href="jobs.html">
+                        Find your first job
+                    </a>
+
+                </div>
+
+            `;
+
+
+            return;
+
+        }
+
+
+        const recent =
+            applications.slice(
+                0,
+                3
+            );
+
+
+        recentApplications.innerHTML =
+            recent.map(
+                application => {
+
+
+                    const title =
+                        application.job_title ||
+                        "Job Application";
+
+
+                    const company =
+                        application.company ||
+                        "Company";
+
+
+                    const status =
+                        application.status ||
+                        "Pending";
+
+
+                    const date =
+                        application.created_at
+                            ? new Date(
+                                application.created_at
+                            ).toLocaleDateString()
+                            : "";
+
+
+                    return `
+
+                        <div class="application-row">
+
+                            <div class="application-icon">
+
+                                <i class="fa-solid fa-briefcase"></i>
+
+                            </div>
+
+
+                            <div class="application-info">
+
+                                <h3>
+                                    ${escapeHtml(
+                                        title
+                                    )}
+                                </h3>
+
+                                <span>
+                                    ${escapeHtml(
+                                        company
+                                    )}
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-status">
+
+                                <span class="status-badge">
+                                    ${escapeHtml(
+                                        status
+                                    )}
+                                </span>
+
+                                <small>
+                                    ${escapeHtml(
+                                        date
+                                    )}
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            ).join("");
+
+    }
+
+
+    //==================================================
+    // ESCAPE HTML
+    //==================================================
+
+    function escapeHtml(value) {
+
+        return String(value)
+            .replaceAll(
+                "&",
+                "&amp;"
+            )
+            .replaceAll(
+                "<",
+                "&lt;"
+            )
+            .replaceAll(
+                ">",
+                "&gt;"
+            )
+            .replaceAll(
+                '"',
+                "&quot;"
+            )
+            .replaceAll(
+                "'",
+                "&#039;"
+            );
+
+    }
+
+
+    //==================================================
+    // SEARCH JOBS
+    //==================================================
+
+    function openJobs() {
+
+
+        const searchValue =
+            dashboardSearch.value.trim();
+
+
+        if (
+            searchValue !== ""
+        ) {
+
+            localStorage.setItem(
+                "jobFinderSearch",
+                searchValue
+            );
+
+        }
+
+
+        window.location.href =
+            "jobs.html";
+
+    }
+
+
+    searchJobsBtn.addEventListener(
+        "click",
+        openJobs
+    );
+
+
+    dashboardSearch.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key ===
+                "Enter"
+            ) {
+
+                openJobs();
+
+            }
+
+        }
+    );
+
+
+    //==================================================
+    // LOGOUT
+    //==================================================
+
+    logoutBtn.addEventListener(
+        "click",
+        async () => {
+
+
+            const confirmLogout =
+                confirm(
+                    "Are you sure you want to logout?"
+                );
+
+
+            if (!confirmLogout) {
+                return;
+            }
+
+
+            const {
+                error
+            } = await logoutUser();
+
+
+            if (error) {
+
+                alert(
+                    "Logout error: " +
+                    error.message
+                );
+
+                return;
+
+            }
+
+
+            window.location.replace(
+                "login.html"
+            );
+
+        }
+    );
+
+
+    //==================================================
+    // START
+    //==================================================
+
+    loadDashboard();
+
+</script>
+
+
+</body>
+
+</html>

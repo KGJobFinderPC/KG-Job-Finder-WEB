@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Employer Profile</title>
+
+    <link rel="stylesheet"
+          href="employer-profile.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<main class="employer-profile-page">
+
+
+    <!--==================================================
+    HEADER
+    ==================================================-->
+
+    <header class="top-bar">
+
+        <div class="logo">
+
+            <h1>KG</h1>
+
+            <span data-translate="brand.jobFinder">
+                JOB FINDER
+            </span>
+
+        </div>
+
+
+        <a href="employer-dashboard.html"
+           class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span data-translate="common.dashboard">
+                Dashboard
+            </span>
+
+        </a>
+
+    </header>
+
+
+    <!--==================================================
+    PAGE TITLE
+    ==================================================-->
+
+    <section class="page-title">
+
+        <h2 data-translate="employerProfile.title">
+            Employer Profile
+        </h2>
+
+        <p data-translate="employerProfile.description">
+            Manage your company information and account details.
+        </p>
+
+    </section>
+
+
+    <!--==================================================
+    PROFILE FORM
+    ==================================================-->
+
+    <section class="profile-container">
+
+        <form id="employerProfileForm">
+
+
+            <!-- COMPANY NAME -->
+
+            <div class="input-group">
+
+                <label for="companyName"
+                       data-translate="employerProfile.companyName">
+
+                    Company Name
+
+                </label>
+
+                <input
+                        type="text"
+                        id="companyName"
+                        data-translate-placeholder="employerProfile.companyNamePlaceholder"
+                        placeholder="Enter your company name"
+                        required>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <label for="email"
+                       data-translate="employerProfile.email">
+
+                    Email Address
+
+                </label>
+
+                <input
+                        type="email"
+                        id="email"
+                        data-translate-placeholder="employerProfile.emailPlaceholder"
+                        placeholder="Enter your email address"
+                        required>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="input-group">
+
+                <label for="phone"
+                       data-translate="employerProfile.phone">
+
+                    Phone Number
+
+                </label>
+
+                <input
+                        type="tel"
+                        id="phone"
+                        data-translate-placeholder="employerProfile.phonePlaceholder"
+                        placeholder="Enter your company phone number">
+
+            </div>
+
+
+            <!-- CITY -->
+
+            <div class="input-group">
+
+                <label for="city"
+                       data-translate="employerProfile.city">
+
+                    City
+
+                </label>
+
+                <input
+                        type="text"
+                        id="city"
+                        data-translate-placeholder="employerProfile.cityPlaceholder"
+                        placeholder="Enter your city">
+
+            </div>
+
+
+            <!-- COUNTRY -->
+
+            <div class="input-group">
+
+                <label for="country"
+                       data-translate="employerProfile.country">
+
+                    Country
+
+                </label>
+
+                <input
+                        type="text"
+                        id="country"
+                        data-translate-placeholder="employerProfile.countryPlaceholder"
+                        placeholder="Enter your country">
+
+            </div>
+
+
+            <!-- WEBSITE -->
+
+            <div class="input-group">
+
+                <label for="website"
+                       data-translate="employerProfile.website">
+
+                    Company Website
+
+                </label>
+
+                <input
+                        type="url"
+                        id="website"
+                        data-translate-placeholder="employerProfile.websitePlaceholder"
+                        placeholder="https://example.com">
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="input-group">
+
+                <label for="description"
+                       data-translate="employerProfile.companyDescription">
+
+                    Company Description
+
+                </label>
+
+                <textarea
+                        id="description"
+                        rows="6"
+                        data-translate-placeholder="employerProfile.descriptionPlaceholder"
+                        placeholder="Tell candidates about your company..."></textarea>
+
+            </div>
+
+
+            <!-- SAVE -->
+
+            <button
+                    type="submit"
+                    class="save-btn">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                <span data-translate="common.saveChanges">
+                    Save Changes
+                </span>
+
+            </button>
+
+
+            <!-- BACK -->
+
+            <a href="employer-dashboard.html"
+               class="back-dashboard"
+               data-translate="common.backToDashboard">
+
+                Back to Dashboard
+
+            </a>
+
+
+        </form>
+
+    </section>
+
+
+</main>
+
+
+<!--==================================================
+TRANSLATION SYSTEM
+==================================================-->
+
+<script
+        type="module"
+        src="translations.js">
+</script>
+
+
+<!--==================================================
+EMPLOYER PROFILE JAVASCRIPT
+==================================================-->
+
+<script
+        type="module"
+        src="employer-profile.js">
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,570 @@
+/*==================================================*
+* RESET
+*==================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+/*==================================================*
+* EMPLOYER PROFILE PAGE
+*==================================================*/
+
+.employer-profile-page {
+
+    min-height: 100vh;
+
+    padding: 35px 40px 60px;
+
+    background: #0f172a;
+}
+
+/*==================================================*
+* HEADER
+*==================================================*/
+
+.top-bar {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 30px;
+}
+
+/*==================================================*
+* LOGO
+*==================================================*/
+
+.logo {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.logo h1 {
+
+    font-size: 4.2rem;
+
+    font-weight: 900;
+
+    line-height: .9;
+
+    letter-spacing: 5px;
+
+    background: linear-gradient(
+        #ffffff,
+        #fff5c4,
+        #ffd700,
+        #d4af37,
+        #8b6508
+    );
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.logo span {
+
+    margin-top: -5px;
+
+    font-size: .82rem;
+
+    font-weight: 700;
+
+    letter-spacing: 8px;
+
+    color: #e6c765;
+}
+
+/*==================================================*
+* BACK BUTTON
+*==================================================*/
+
+.back-btn {
+
+    min-width: 145px;
+
+    height: 48px;
+
+    padding: 0 18px;
+
+    border: 1px solid #22c55e;
+
+    border-radius: 13px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: .85rem;
+
+    font-weight: 600;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+    transition: .3s;
+
+    flex-shrink: 0;
+}
+
+.back-btn i {
+
+    color: #d4af37;
+}
+
+.back-btn:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8df86,
+            #d4af37
+        );
+
+    color: #111111;
+
+    border-color: #ffd700;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(212,175,55,.25);
+}
+
+.back-btn:hover i {
+
+    color: #111111;
+}
+
+/*==================================================*
+* PAGE TITLE
+*==================================================*/
+
+.page-title {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 0 auto 30px;
+
+    text-align: center;
+}
+
+.page-title h2 {
+
+    font-size: 2.3rem;
+
+    font-weight: 800;
+
+    background: linear-gradient(
+        #ffffff,
+        #fff5c4,
+        #ffd700,
+        #d4af37
+    );
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.page-title p {
+
+    margin-top: 8px;
+
+    color: #bfc5d0;
+
+    font-size: .9rem;
+
+    line-height: 1.6;
+}
+
+/*==================================================*
+* PROFILE CONTAINER
+*==================================================*/
+
+.profile-container {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    padding: 35px;
+
+    background: rgba(15,15,15,.78);
+
+    border: 1px solid
+        rgba(212,175,55,.30);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.45);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/*==================================================*
+* INPUT GROUP
+*==================================================*/
+
+.input-group {
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d4af37;
+
+    font-size: .85rem;
+
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+
+    width: 100%;
+
+    border: 1px solid
+        rgba(212,175,55,.30);
+
+    border-radius: 13px;
+
+    background: rgba(0,0,0,.42);
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: .88rem;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.input-group input {
+
+    height: 52px;
+
+    padding: 0 15px;
+}
+
+.input-group textarea {
+
+    padding: 14px 15px;
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+
+    color: #858585;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+
+    border-color: #ffd700;
+
+    box-shadow:
+        0 0 15px
+        rgba(212,175,55,.18);
+}
+
+/*==================================================*
+* SAVE BUTTON
+*==================================================*/
+
+.save-btn {
+
+    width: 100%;
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8df86,
+            #d4af37,
+            #9b7300
+        );
+
+    color: #111111;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: .9rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    transition: .3s;
+}
+
+.save-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(212,175,55,.35);
+}
+
+/*==================================================*
+* BACK TO DASHBOARD
+*==================================================*/
+
+.back-dashboard {
+
+    display: block;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.back-dashboard:hover {
+
+    color: #ffd700;
+}
+
+/*==================================================*
+* TABLET
+*==================================================*/
+
+@media(max-width:800px) {
+
+    .employer-profile-page {
+
+        padding: 25px 25px 45px;
+    }
+
+    .top-bar {
+
+        margin-bottom: 30px;
+    }
+
+    .profile-container {
+
+        padding: 28px;
+    }
+}
+
+/*==================================================*
+* MOBILE
+*==================================================*/
+
+@media(max-width:600px) {
+
+    .employer-profile-page {
+
+        padding: 20px 15px 35px;
+    }
+
+    .top-bar {
+
+        align-items: center;
+
+        margin-bottom: 25px;
+    }
+
+    .logo h1 {
+
+        font-size: 3rem;
+
+        letter-spacing: 4px;
+    }
+
+    .logo span {
+
+        font-size: .65rem;
+
+        letter-spacing: 5px;
+    }
+
+    .back-btn {
+
+        min-width: 110px;
+
+        height: 43px;
+
+        padding: 0 12px;
+
+        font-size: .75rem;
+    }
+
+    .page-title {
+
+        margin-bottom: 22px;
+    }
+
+    .page-title h2 {
+
+        font-size: 1.55rem;
+    }
+
+    .page-title p {
+
+        font-size: .78rem;
+    }
+
+    .profile-container {
+
+        padding: 22px 18px;
+
+        border-radius: 20px;
+    }
+
+    .input-group {
+
+        margin-bottom: 18px;
+    }
+
+    .input-group input {
+
+        height: 50px;
+
+        font-size: .82rem;
+    }
+
+    .input-group textarea {
+
+        font-size: .82rem;
+
+        min-height: 140px;
+    }
+
+    .save-btn {
+
+        height: 52px;
+    }
+}
+
+/*==================================================*
+* SMALL MOBILE
+*==================================================*/
+
+@media(max-width:380px) {
+
+    .logo h1 {
+
+        font-size: 2.6rem;
+    }
+
+    .logo span {
+
+        font-size: .58rem;
+
+        letter-spacing: 4px;
+    }
+
+    .back-btn {
+
+        min-width: 100px;
+
+        height: 40px;
+
+        font-size: .7rem;
+    }
+
+    .profile-container {
+
+        padding: 20px 15px;
+    }
+
+    .page-title h2 {
+
+        font-size: 1.4rem;
+    }
+}
+
+/*==================================================*
+* END
+*==================================================*/

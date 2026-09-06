@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Candidate Dashboard</title>
+
+    <link rel="stylesheet"
+          href="candidate-dashboard.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!--==================================================
+CANDIDATE DASHBOARD
+==================================================-->
+
+<main class="candidate-dashboard">
+
+
+    <!--==================================================
+    HEADER
+    ==================================================-->
+
+    <header class="candidate-header">
+
+        <div class="candidate-title">
+
+            <h1 data-translate="candidate.dashboard">
+                Candidate Dashboard
+            </h1>
+
+            <p data-translate="candidate.description">
+                Manage your job search and applications.
+            </p>
+
+        </div>
+
+
+        <button class="logout-btn"
+                id="logoutBtn"
+                type="button">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span data-translate="common.logout">
+                    Logout
+                </span>
+
+        </button>
+
+    </header>
+
+
+    <!--==================================================
+    DASHBOARD BUTTONS
+    ==================================================-->
+
+    <section class="candidate-actions">
+
+
+        <!-- FIND JOBS -->
+
+        <button class="dashboard-card"
+                id="findJobsBtn"
+                type="button">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2 data-translate="candidate.findJobs">
+                    Find Jobs
+                </h2>
+
+                <p data-translate="candidate.findJobsDescription">
+                    Search and explore available jobs.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </button>
+
+
+        <!-- APPLICATIONS -->
+
+        <button class="dashboard-card"
+                id="applicationsBtn"
+                type="button">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2 data-translate="candidate.applications">
+                    Applications
+                </h2>
+
+                <p data-translate="candidate.applicationsDescription">
+                    View and manage your applications.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </button>
+
+
+        <!-- MY PROFILE -->
+
+        <button class="dashboard-card"
+                id="profileBtn"
+                type="button">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2 data-translate="candidate.myProfile">
+                    My Profile
+                </h2>
+
+                <p data-translate="candidate.profileDescription">
+                    Manage your personal information.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </button>
+
+
+        <!-- UPLOAD CV -->
+
+        <button class="dashboard-card"
+                id="uploadCvBtn"
+                type="button">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-file-arrow-up"></i>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2 data-translate="candidate.uploadCv">
+                    Upload CV
+                </h2>
+
+                <p data-translate="candidate.uploadCvDescription">
+                    Upload and manage your CV.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </button>
+
+
+        <!-- RECOMMENDED JOBS -->
+
+        <button class="dashboard-card"
+                id="recommendedJobsBtn"
+                type="button">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-star"></i>
+
+            </div>
+
+            <div class="card-content">
+
+                <h2 data-translate="candidate.recommendedJobs">
+                    Recommended Jobs
+                </h2>
+
+                <p data-translate="candidate.recommendedJobsDescription">
+                    Discover jobs recommended for you.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </button>
+
+
+    </section>
+
+
+</main>
+
+
+<!--==================================================
+GLOBAL TRANSLATION SYSTEM
+==================================================-->
+
+<script type="module"
+        src="translations.js">
+</script>
+
+
+<!--==================================================
+CANDIDATE DASHBOARD JAVASCRIPT
+==================================================-->
+
+<script type="module"
+        src="candidate-dashboard.js">
+</script>
+
+
+</body>
+
+</html>

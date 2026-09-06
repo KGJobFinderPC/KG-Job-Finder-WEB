@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Control Center | KG Job Finder</title>
+
+    <link rel="stylesheet"
+          href="admin.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-shell">
+
+
+    <header class="admin-topbar">
+
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                KG
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    JOB FINDER
+                </strong>
+
+                <span>
+                    ADMINISTRATION
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+
+            <div class="control-label">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                ADMIN CONTROL CENTER
+
+            </div>
+
+
+            <a href="dashboard.html"
+               class="dashboard-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Dashboard
+
+            </a>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <main class="admin-main">
+
+
+        <section class="page-heading">
+
+
+            <div>
+
+                <span class="eyebrow">
+                    KG JOB FINDER
+                </span>
+
+
+                <h1>
+                    Admin Control Center
+                </h1>
+
+
+                <p>
+                    Manage jobs, users and applications from one place.
+                </p>
+
+            </div>
+
+
+            <div class="status-pill">
+
+                <span></span>
+
+                System Online
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon users-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        USERS
+                    </span>
+
+                    <strong id="usersCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon jobs-icon">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        JOBS
+                    </span>
+
+                    <strong id="jobsCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon applications-icon">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        APPLICATIONS
+                    </span>
+
+                    <strong id="applicationsCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="control-workspace">
+
+
+            <aside class="panel control-panel">
+
+
+                <div class="panel-heading">
+
+
+                    <div>
+
+                        <span class="panel-kicker">
+                            CONTROL CENTER
+                        </span>
+
+
+                        <h2>
+                            Administration
+                        </h2>
+
+                    </div>
+
+
+                    <div class="panel-symbol">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="control-list">
+
+
+                    <div class="control-item">
+
+                        <div class="control-item-icon">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Job Management
+                            </strong>
+
+                            <span>
+                                View and manage job listings.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="control-item">
+
+                        <div class="control-item-icon">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                User Overview
+                            </strong>
+
+                            <span>
+                                View registered users.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="control-item">
+
+                        <div class="control-item-icon">
+
+                            <i class="fa-solid fa-file-lines"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Applications
+                            </strong>
+
+                            <span>
+                                Review candidate applications.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="control-item">
+
+                        <div class="control-item-icon">
+
+                            <i class="fa-solid fa-file-pdf"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Candidate CV
+                            </strong>
+
+                            <span>
+                                Open uploaded CV documents.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </aside>
+
+
+
+            <section class="panel jobs-panel">
+
+
+                <div class="panel-heading">
+
+
+                    <div>
+
+                        <span class="panel-kicker">
+                            JOB DATABASE
+                        </span>
+
+
+                        <h2>
+                            Job Listings
+                        </h2>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-briefcase section-icon"></i>
+
+
+                </div>
+
+
+
+                <div class="table-wrap">
+
+
+                    <table id="jobsTable">
+
+
+                        <thead>
+
+                        <tr>
+
+                            <th>
+                                Job Title
+                            </th>
+
+                            <th>
+                                Company
+                            </th>
+
+                            <th>
+                                City
+                            </th>
+
+                            <th>
+                                Salary
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                        </thead>
+
+
+                        <tbody id="jobsTableBody">
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+
+        <section class="panel applications-panel">
+
+
+            <div class="panel-heading">
+
+
+                <div>
+
+                    <span class="panel-kicker">
+                        CANDIDATE ACTIVITY
+                    </span>
+
+
+                    <h2>
+                        Recent Applications
+                    </h2>
+
+                </div>
+
+
+                <i class="fa-solid fa-file-circle-check section-icon"></i>
+
+
+            </div>
+
+
+            <div id="applicationsList">
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer class="admin-footer">
+
+        <span>
+            KG Job Finder
+        </span>
+
+
+        <span>
+            © 2026 All Rights Reserved
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+
+<script type="module"
+        src="admin.js"></script>
+
+
+</body>
+
+</html>

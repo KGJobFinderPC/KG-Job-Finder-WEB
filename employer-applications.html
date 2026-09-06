@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KG Job Finder | Applications</title>
+
+    <link rel="stylesheet"
+          href="employer-applications.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!--==================================================
+EMPLOYER APPLICATIONS PAGE
+==================================================-->
+
+<main class="employer-applications-page">
+
+
+    <!--==================================================
+    HEADER
+    ==================================================-->
+
+    <header class="top-bar">
+
+        <div class="logo">
+
+            <h1>KG</h1>
+
+            <span data-translate="brand.jobFinder">
+                JOB FINDER
+            </span>
+
+        </div>
+
+
+        <a href="employer-dashboard.html"
+           class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span data-translate="common.dashboard">
+                Dashboard
+            </span>
+
+        </a>
+
+    </header>
+
+
+    <!--==================================================
+    PAGE TITLE
+    ==================================================-->
+
+    <section class="page-heading">
+
+        <h2 data-translate="employerApplications.title">
+            Applications
+        </h2>
+
+        <p data-translate="employerApplications.description">
+            Review applications submitted for your jobs.
+        </p>
+
+    </section>
+
+
+    <!--==================================================
+    APPLICATIONS CONTAINER
+    ==================================================-->
+
+    <section
+            class="applications-container"
+            id="employerApplicationsContainer">
+
+        <div class="loading-message">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <p data-translate="employerApplications.loading">
+                Loading applications...
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!--==================================================
+TRANSLATION SYSTEM
+==================================================-->
+
+<script
+        type="module"
+        src="translations.js">
+</script>
+
+
+<!--==================================================
+EMPLOYER APPLICATIONS JAVASCRIPT
+==================================================-->
+
+<script
+        type="module"
+        src="employer-applications.js">
+</script>
+
+
+</body>
+
+</html>

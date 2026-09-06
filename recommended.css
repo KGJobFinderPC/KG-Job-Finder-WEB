@@ -1,0 +1,399 @@
+/*==================================================
+                    RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050505;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+/*==================================================
+            RECOMMENDED PAGE
+==================================================*/
+
+.recommended-page{
+
+    position:relative;
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.18),
+        rgba(0,0,0,.30)
+    ),
+    url("images/workers.jpg")
+    center center/cover no-repeat;
+
+}
+
+/*==================================================
+                OVERLAY
+==================================================*/
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.08)
+    );
+
+}
+
+/*==================================================
+                TOP BAR
+==================================================*/
+
+.top-bar{
+
+    position:relative;
+
+    z-index:100;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 40px;
+
+}
+
+.logo h1{
+
+    font-size:4rem;
+
+    font-weight:900;
+
+    background:linear-gradient(
+        #ffffff,
+        #fff5c4,
+        #ffd700,
+        #d4af37,
+        #8b6508
+    );
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.logo span{
+
+    display:block;
+
+    margin-top:-8px;
+
+    color:#e6c765;
+
+    letter-spacing:8px;
+
+    font-weight:700;
+
+    font-size:.95rem;
+
+}
+
+.back-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 20px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(212,175,55,.35);
+
+    background:rgba(15,15,15,.60);
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    transition:.30s;
+
+}
+
+.back-btn:hover{
+
+    background:#d4af37;
+
+    color:#111111;
+
+}
+/*==================================================
+                PAGE TITLE
+==================================================*/
+
+.page-title{
+
+    position:relative;
+
+    z-index:100;
+
+    text-align:center;
+
+    padding:20px 40px 35px;
+
+}
+
+.page-title h2{
+
+    font-size:2.3rem;
+
+    color:#ffffff;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+}
+
+.page-title p{
+
+    color:#d8d8d8;
+
+    font-size:1rem;
+
+}
+
+/*==================================================
+            RECOMMENDED JOBS
+==================================================*/
+
+.recommended-container{
+
+    position:relative;
+
+    z-index:100;
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:0 40px 50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:25px;
+
+}
+
+.job-card{
+
+    position:relative;
+
+    background:rgba(15,15,15,.60);
+
+    border:1px solid rgba(212,175,55,.35);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    transition:.35s;
+
+}
+
+.job-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#ffd700;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.25);
+
+}
+
+.match-score{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    background:rgba(212,175,55,.18);
+
+    border:1px solid rgba(212,175,55,.35);
+
+    color:#ffd700;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+}
+
+.job-card h3{
+
+    color:#ffd700;
+
+    font-size:1.35rem;
+
+    margin-bottom:8px;
+
+}
+
+.job-card h4{
+
+    color:#ffffff;
+
+    margin-bottom:18px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+.job-card p{
+
+    color:#d8d8d8;
+
+    margin-bottom:12px;
+
+    line-height:1.5;
+
+}
+
+.job-card i{
+
+    color:#d4af37;
+
+    margin-right:8px;
+
+}
+/*==================================================
+                APPLY BUTTON
+==================================================*/
+
+.apply-btn{
+
+    width:100%;
+
+    height:50px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        180deg,
+        #ffe27a,
+        #d4af37,
+        #a77a08
+    );
+
+    color:#111111;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.apply-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(212,175,55,.45);
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:900px){
+
+    .top-bar{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .recommended-container{
+
+        padding:20px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .recommended-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .page-title{
+
+        padding:20px;
+
+    }
+
+    .logo h1{
+
+        font-size:3.2rem;
+
+    }
+
+}
+
+/*==================================================
+                    END
+==================================================*/
