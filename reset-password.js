@@ -23,33 +23,77 @@ const toggleConfirmPassword =
 const resetForm =
     document.getElementById("resetForm");
 
+
 //========================================
 // HANDLE PASSWORD RECOVERY SESSION
 //========================================
 
 async function preparePasswordRecovery() {
 
-    const url =
-        new URL(window.location.href);
+    try {
 
-    // Check for authorization code
-    const code =
-        url.searchParams.get("code");
+        const url =
+            new URL(window.location.href);
 
-    if (code) {
+        //========================================
+        // CHECK FOR CODE
+        //========================================
+
+        const code =
+            url.searchParams.get("code");
+
+        if (code) {
+
+            const {
+                error
+            } =
+                await supabase.auth.exchangeCodeForSession(
+                    code
+                );
+
+            if (error) {
+
+                console.error(
+                    "Recovery code error:",
+                    error
+                );
+
+                alert(
+                    "This password reset link is invalid or has expired."
+                );
+
+                return false;
+            }
+        }
+
+        //========================================
+        // CHECK CURRENT SESSION
+        //========================================
 
         const {
+            data,
             error
         } =
-            await supabase.auth.exchangeCodeForSession(
-                code
-            );
+            await supabase.auth.getSession();
 
         if (error) {
 
             console.error(
-                "Recovery session error:",
+                "Session error:",
                 error
+            );
+
+            alert(
+                "Unable to verify password reset session."
+            );
+
+            return false;
+        }
+
+        if (!data || !data.session) {
+
+            console.error(
+                "No Supabase recovery session found."
             );
 
             alert(
@@ -58,31 +102,28 @@ async function preparePasswordRecovery() {
 
             return false;
         }
-    }
 
-    // Check that a valid Supabase session exists
-    const {
-        data,
-        error
-    } =
-        await supabase.auth.getSession();
+        console.log(
+            "Password recovery session ready."
+        );
 
-    if (error || !data.session) {
+        return true;
+
+    } catch (error) {
 
         console.error(
-            "No recovery session:",
+            "Password recovery error:",
             error
         );
 
         alert(
-            "This password reset link is invalid or has expired."
+            "An error occurred while preparing the password reset."
         );
 
         return false;
     }
-
-    return true;
 }
+
 
 //========================================
 // SHOW / HIDE PASSWORD
@@ -92,22 +133,28 @@ togglePassword.addEventListener(
     "click",
     () => {
 
-        if (password.type === "password") {
+        if (
+            password.type ===
+            "password"
+        ) {
 
-            password.type = "text";
+            password.type =
+                "text";
 
             togglePassword.innerHTML =
                 '<i class="fa-solid fa-eye-slash"></i>';
 
         } else {
 
-            password.type = "password";
+            password.type =
+                "password";
 
             togglePassword.innerHTML =
                 '<i class="fa-solid fa-eye"></i>';
         }
     }
 );
+
 
 //========================================
 // SHOW / HIDE CONFIRM PASSWORD
@@ -139,6 +186,7 @@ toggleConfirmPassword.addEventListener(
     }
 );
 
+
 //========================================
 // RESET PASSWORD
 //========================================
@@ -154,6 +202,7 @@ resetForm.addEventListener(
 
         const confirm =
             confirmPassword.value.trim();
+
 
         //========================================
         // VALIDATION
@@ -171,7 +220,10 @@ resetForm.addEventListener(
             return;
         }
 
-        if (pass !== confirm) {
+
+        if (
+            pass !== confirm
+        ) {
 
             alert(
                 "Passwords do not match."
@@ -180,7 +232,10 @@ resetForm.addEventListener(
             return;
         }
 
-        if (pass.length < 8) {
+
+        if (
+            pass.length < 8
+        ) {
 
             alert(
                 "Password must contain at least 8 characters."
@@ -188,6 +243,7 @@ resetForm.addEventListener(
 
             return;
         }
+
 
         //========================================
         // CHECK RECOVERY SESSION
@@ -197,44 +253,64 @@ resetForm.addEventListener(
             await preparePasswordRecovery();
 
         if (!sessionReady) {
+
             return;
         }
 
+
         //========================================
-        // UPDATE PASSWORD IN SUPABASE
+        // UPDATE PASSWORD
         //========================================
 
-        const {
-            error
-        } = await updatePassword(
-            pass
-        );
+        try {
 
-        if (error) {
+            const {
+                error
+            } =
+                await updatePassword(
+                    pass
+                );
+
+
+            if (error) {
+
+                console.error(
+                    "Password update error:",
+                    error
+                );
+
+                alert(
+                    "Password reset error: " +
+                    error.message
+                );
+
+                return;
+            }
+
+
+            //========================================
+            // SUCCESS
+            //========================================
+
+            alert(
+                "Password changed successfully. You can now log in with your new password."
+            );
+
+
+            window.location.replace(
+                "login.html"
+            );
+
+        } catch (error) {
 
             console.error(
-                "Password update error:",
+                "Unexpected password error:",
                 error
             );
 
             alert(
-                "Password reset error: " +
-                error.message
+                "An unexpected error occurred while changing the password."
             );
-
-            return;
         }
-
-        //========================================
-        // SUCCESS
-        //========================================
-
-        alert(
-            "Password changed successfully. You can now log in with your new password."
-        );
-
-        window.location.replace(
-            "login.html"
-        );
     }
 );
