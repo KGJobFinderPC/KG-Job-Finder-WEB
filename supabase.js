@@ -133,9 +133,7 @@ export async function loginUser(
 //==========================================
 // FORGOT PASSWORD
 //==========================================
-export async function resetPassword(export async function resetPassword(
-                                        email
-                                    ) {
+export async function resetPassword(email) {
 
                                         return await supabase.auth.resetPasswordForEmail(
 
