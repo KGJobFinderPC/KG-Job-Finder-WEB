@@ -142,7 +142,7 @@ export async function resetPassword(email) {
                                             {
 
                                                 redirectTo:
-                                                    "https://kgjobfinder-cmyk.github.io/kg-job-finder-privacy/reset-password.html"
+    "https://kgjobfinderpc.github.io/KG-Job-Finder-WEB/reset-password.html"
 
                                             }
 
