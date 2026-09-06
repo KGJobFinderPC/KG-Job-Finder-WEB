@@ -22,6 +22,7 @@ const toggleConfirmPassword =
 
 const resetForm =
     document.getElementById("resetForm");
+
 //========================================
 // HANDLE PASSWORD RECOVERY SESSION
 //========================================
@@ -31,6 +32,7 @@ async function preparePasswordRecovery() {
     const url =
         new URL(window.location.href);
 
+    // Check for authorization code
     const code =
         url.searchParams.get("code");
 
@@ -56,13 +58,32 @@ async function preparePasswordRecovery() {
 
             return false;
         }
+    }
 
+    // Check that a valid Supabase session exists
+    const {
+        data,
+        error
+    } =
+        await supabase.auth.getSession();
+
+    if (error || !data.session) {
+
+        console.error(
+            "No recovery session:",
+            error
+        );
+
+        alert(
+            "This password reset link is invalid or has expired."
+        );
+
+        return false;
     }
 
     return true;
 }
 
-preparePasswordRecovery();
 //========================================
 // SHOW / HIDE PASSWORD
 //========================================
@@ -84,9 +105,7 @@ togglePassword.addEventListener(
 
             togglePassword.innerHTML =
                 '<i class="fa-solid fa-eye"></i>';
-
         }
-
     }
 );
 
@@ -116,9 +135,7 @@ toggleConfirmPassword.addEventListener(
 
             toggleConfirmPassword.innerHTML =
                 '<i class="fa-solid fa-eye"></i>';
-
         }
-
     }
 );
 
@@ -173,6 +190,17 @@ resetForm.addEventListener(
         }
 
         //========================================
+        // CHECK RECOVERY SESSION
+        //========================================
+
+        const sessionReady =
+            await preparePasswordRecovery();
+
+        if (!sessionReady) {
+            return;
+        }
+
+        //========================================
         // UPDATE PASSWORD IN SUPABASE
         //========================================
 
@@ -183,6 +211,11 @@ resetForm.addEventListener(
         );
 
         if (error) {
+
+            console.error(
+                "Password update error:",
+                error
+            );
 
             alert(
                 "Password reset error: " +
@@ -203,6 +236,5 @@ resetForm.addEventListener(
         window.location.replace(
             "login.html"
         );
-
     }
 );
