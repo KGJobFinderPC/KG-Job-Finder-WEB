@@ -536,10 +536,15 @@ async function translateDataAttributes() {
 
 function createLanguageSelector() {
 
+    const path =
+        window.location.pathname
+            .toLowerCase();
+
     if (
-        !window.location.pathname
-            .toLowerCase()
-            .endsWith("login.html")
+        !path.endsWith("login.html") &&
+        !path.endsWith("index.html") &&
+        !path.endsWith("/kg-job-finder-web/") &&
+        path !== "/kg-job-finder-web"
     ) {
         return;
     }
@@ -902,17 +907,19 @@ function initializeTranslations() {
 
         }
 
+// CREATE LANGUAGE BUTTON ON LOGIN, INDEX AND GITHUB PAGES HOME
+const path =
+    window.location.pathname
+        .toLowerCase();
 
-        // ONLY LOGIN GETS THE LANGUAGE BUTTON
-        if (
-            window.location.pathname
-                .toLowerCase()
-                .endsWith("login.html")
-        ) {
-
-            createLanguageSelector();
-
-        }
+if (
+    path.endsWith("login.html") ||
+    path.endsWith("index.html") ||
+    path.endsWith("/kg-job-finder-web/") ||
+    path === "/kg-job-finder-web"
+) {
+    createLanguageSelector();
+}
 
 
         await translateDataAttributes();
