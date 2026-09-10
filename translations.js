@@ -993,4 +993,6 @@ export {
 // START
 // ============================================================
 
-initializeTranslations();
+document.addEventListener("DOMContentLoaded", () => {
+    initializeTranslations();
+});
