@@ -1553,3 +1553,14 @@ body {
         font-size: 0.64rem !important;
     }
 }
+/* =========================================
+   FINAL MOBILE POSITION FIX
+   ========================================= */
+
+@media (max-width: 850px) {
+
+    .login-stage {
+        transform: translateY(120px) !important;
+    }
+
+}
