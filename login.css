@@ -833,7 +833,7 @@ body::after {
 
 
     .login-stage {
-        transform: translateY(-360px) !important;
+        transform: translateY(-250px) !important;
         position: relative;
 
         display: flex;
