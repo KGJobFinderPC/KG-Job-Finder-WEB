@@ -1522,7 +1522,7 @@ body {
 }
 
 /* Extra small phones */
-@media (max-width: 360px) {
+@media (max-width: 480px) {
 
     .login-stage {
         padding-left: 8px !important;
