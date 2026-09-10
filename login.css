@@ -1557,8 +1557,14 @@ body {
    FINAL MOBILE POSITION FIX
    ========================================= */
 
-@media screen and (max-width: 850px) {
+/* =========================================
+   MOBILE ONLY - LOGIN CARD POSITION
+   ========================================= */
+
+@media screen and (max-width: 850px) and (pointer: coarse) {
+
     .login-stage {
-        transform: translateY(200px) !important;
+        transform: translateY(120px) !important;
     }
+
 }
