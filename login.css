@@ -1569,6 +1569,6 @@ body {
 
 @media only screen and (min-width: 851px) {
     .login-stage {
-        transform: translateY(0) !important;
+  transform: translateY(-40px) !important;
     }
 }
