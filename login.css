@@ -1561,10 +1561,14 @@ body {
    MOBILE ONLY - LOGIN CARD POSITION
    ========================================= */
 
-@media screen and (max-width: 850px) and (pointer: coarse) {
-
+@media only screen and (max-width: 850px) {
     .login-stage {
-        transform: translateY(120px) !important;
+        transform: translateY(200px) !important;
     }
+}
 
+@media only screen and (min-width: 851px) {
+    .login-stage {
+        transform: translateY(0) !important;
+    }
 }
