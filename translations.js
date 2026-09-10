@@ -996,3 +996,8 @@ export {
 document.addEventListener("DOMContentLoaded", () => {
     initializeTranslations();
 });
+setTimeout(() => {
+    if (!document.querySelector(".language-selector")) {
+        createLanguageSelector();
+    }
+}, 1000);
