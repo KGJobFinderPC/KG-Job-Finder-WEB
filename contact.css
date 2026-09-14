@@ -188,11 +188,20 @@ body::before {
     gap: 8px;
 }
 
+/* ==================================================
+   FIELD LABELS
+   ================================================== */
+
 .input-group label {
-    color: #dfe3ed;
+    color: #ffd84d;
     font-size: 13px;
     font-weight: 600;
+    letter-spacing: 0.2px;
 }
+
+/* ==================================================
+   INPUT BOX
+   ================================================== */
 
 .input-box {
     position: relative;
@@ -203,28 +212,43 @@ body::before {
     left: 17px;
     top: 50%;
     transform: translateY(-50%);
-    color: #7e869a;
+    color: #ffd84d;
     font-size: 14px;
     pointer-events: none;
 }
 
+/* ==================================================
+   INPUTS
+   ================================================== */
+
 .input-box input,
 .input-box textarea {
     width: 100%;
-    border: 1px solid #292f40;
+    border: 1px solid rgba(255, 216, 77, 0.22);
     outline: none;
     border-radius: 12px;
     background: #0b0f1b;
     color: #ffffff;
     font-family: "Poppins", sans-serif;
     font-size: 13px;
-    transition: 0.25s ease;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
+
+/* ==================================================
+   TEXT INPUT
+   ================================================== */
 
 .input-box input {
     height: 52px;
     padding: 0 17px 0 45px;
 }
+
+/* ==================================================
+   MESSAGE
+   ================================================== */
 
 .input-box textarea {
     min-height: 145px;
@@ -238,19 +262,35 @@ body::before {
     transform: none;
 }
 
+/* ==================================================
+   PLACEHOLDER
+   ================================================== */
+
 .input-box input::placeholder,
 .input-box textarea::placeholder {
-    color: #5f6678;
+    color: #7f8799;
+    opacity: 1;
 }
+
+/* ==================================================
+   FOCUS
+   ================================================== */
 
 .input-box input:focus,
 .input-box textarea:focus {
     border-color: #ffd84d;
-    box-shadow: 0 0 0 3px rgba(255, 216, 77, 0.08);
+    background: #0d1220;
+    box-shadow:
+        0 0 0 3px rgba(255, 216, 77, 0.10),
+        0 0 20px rgba(255, 216, 77, 0.06);
 }
 
+/* ==================================================
+   ICON WHEN ACTIVE
+   ================================================== */
+
 .input-box:focus-within > i {
-    color: #ffd84d;
+    color: #ffffff;
 }
 
 /* ==================================================
