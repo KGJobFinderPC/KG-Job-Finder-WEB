@@ -2310,6 +2310,326 @@ async function openApplicationCv(
     }
 
 }
+
+/* ==================================================
+   SUPPORT MESSAGES
+================================================== */
+
+async function loadSupportMessages() {
+
+    try {
+
+        const {
+            data,
+            error
+        } = await supabase
+            .from("support_messages")
+            .select("*")
+            .order(
+                "created_at",
+                {
+                    ascending: false
+                }
+            );
+
+
+        if (error) {
+
+            console.error(
+                "Support messages loading error:",
+                error
+            );
+
+            showMessage(
+                "Unable to load support messages: " +
+                error.message
+            );
+
+            return;
+
+        }
+
+
+        openSupportMessagesOverview(
+            data || []
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Support messages function error:",
+            error
+        );
+
+        showMessage(
+            "Unable to load support messages."
+        );
+
+    }
+
+}
+
+
+function openSupportMessagesOverview(messages) {
+
+    const overlay =
+        createOverlay(
+            "supportMessagesOverlay"
+        );
+
+
+    const modal =
+        document.createElement("div");
+
+
+    modal.style.width =
+        "min(1000px, 100%)";
+
+    modal.style.maxHeight =
+        "calc(100% - 20px)";
+
+    modal.style.overflow =
+        "auto";
+
+    modal.style.boxSizing =
+        "border-box";
+
+    modal.style.border =
+        "1px solid rgba(255,255,255,.10)";
+
+    modal.style.borderRadius =
+        "22px";
+
+    modal.style.background =
+        "linear-gradient(145deg,#101827,#11182b 55%,#181442)";
+
+    modal.style.boxShadow =
+        "0 35px 90px rgba(0,0,0,.55)";
+
+    modal.style.color =
+        "#ffffff";
+
+
+    modal.innerHTML = `
+
+        <div style="
+            display:flex;
+            align-items:flex-start;
+            justify-content:space-between;
+            gap:20px;
+            padding:24px;
+            border-bottom:1px solid rgba(255,255,255,.08);
+        ">
+
+            <div>
+
+                <span style="
+                    color:#ffd84d;
+                    font-size:10px;
+                    font-weight:700;
+                    letter-spacing:2px;
+                ">
+                    KG JOB FINDER
+                </span>
+
+                <h2 style="
+                    margin:6px 0 0;
+                    color:#ffd84d;
+                    font-size:26px;
+                ">
+                    Support Messages
+                </h2>
+
+                <p style="
+                    margin:5px 0 0;
+                    color:#64748b;
+                    font-size:12px;
+                ">
+                    Messages received from candidates and employers
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeSupportMessagesButton"
+                type="button"
+                style="
+                    width:40px;
+                    height:40px;
+                    border-radius:10px;
+                    background:#b00020;
+                    color:#ffffff;
+                    border:1px solid #ef4444;
+                    cursor:pointer;
+                    font-size:18px;
+                "
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div style="
+            padding:20px 24px;
+        ">
+
+            ${
+                messages.length
+
+                ? messages.map(
+                    message => `
+
+                        <div style="
+                            padding:18px;
+                            margin-bottom:12px;
+                            border:1px solid rgba(255,255,255,.06);
+                            border-radius:14px;
+                            background:rgba(255,255,255,.025);
+                        ">
+
+                            <div style="
+                                display:flex;
+                                justify-content:space-between;
+                                gap:15px;
+                                margin-bottom:10px;
+                            ">
+
+                                <strong style="
+                                    color:#ffd84d;
+                                    font-size:15px;
+                                ">
+                                    ${escapeHtml(
+                                        message.subject ||
+                                        "No subject"
+                                    )}
+                                </strong>
+
+                                <span style="
+                                    color:#64748b;
+                                    font-size:10px;
+                                ">
+                                    ${escapeHtml(
+                                        message.created_at ||
+                                        ""
+                                    )}
+                                </span>
+
+                            </div>
+
+
+                            <div style="
+                                display:grid;
+                                gap:5px;
+                                margin-bottom:12px;
+                            ">
+
+                                <span style="
+                                    color:#f8fafc;
+                                    font-size:12px;
+                                ">
+                                    <strong>Name:</strong>
+                                    ${escapeHtml(
+                                        message.name ||
+                                        "Unknown"
+                                    )}
+                                </span>
+
+
+                                <span style="
+                                    color:#94a3b8;
+                                    font-size:12px;
+                                ">
+                                    <strong>Email:</strong>
+                                    ${escapeHtml(
+                                        message.email ||
+                                        "No email"
+                                    )}
+                                </span>
+
+                            </div>
+
+
+                            <div style="
+                                padding:14px;
+                                border-radius:10px;
+                                background:rgba(0,0,0,.18);
+                                color:#cbd5e1;
+                                font-size:13px;
+                                line-height:1.6;
+                                white-space:pre-wrap;
+                                word-break:break-word;
+                            ">
+                                ${escapeHtml(
+                                    message.message ||
+                                    ""
+                                )}
+                            </div>
+
+                        </div>
+
+                    `
+                ).join("")
+
+                : `
+
+                    <div style="
+                        padding:60px 20px;
+                        text-align:center;
+                        color:#64748b;
+                    ">
+                        No support messages found.
+                    </div>
+
+                `
+            }
+
+        </div>
+
+    `;
+
+
+    overlay.appendChild(
+        modal
+    );
+
+
+    document
+        .getElementById(
+            "closeSupportMessagesButton"
+        )
+        ?.addEventListener(
+            "click",
+            () => {
+
+                closeOverlay(
+                    "supportMessagesOverlay"
+                );
+
+            }
+        );
+
+
+    overlay.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === overlay
+            ) {
+
+                closeOverlay(
+                    "supportMessagesOverlay"
+                );
+
+            }
+
+        }
+    );
+
+}
 /* ==================================================
    CONTROL CENTER
 ================================================== */
@@ -2394,7 +2714,16 @@ function setupControlCenterButtons() {
                         return;
 
                     }
+if (
+    name ===
+    "Support Messages"
+) {
 
+    loadSupportMessages();
+
+    return;
+
+}
 
                     if (
                         name ===
