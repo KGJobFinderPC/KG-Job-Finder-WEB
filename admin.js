@@ -2696,6 +2696,7 @@ async function deleteSupportMessage(
     }
 
     const {
+        data,
         error
     } = await supabase
         .from("support_messages")
@@ -2703,8 +2704,8 @@ async function deleteSupportMessage(
         .eq(
             "id",
             messageId
-        );
-
+        )
+        .select();
     if (error) {
         console.error(
             "Delete support message error:",
