@@ -2567,7 +2567,32 @@ function openSupportMessagesOverview(messages) {
                                     ""
                                 )}
                             </div>
-
+                            <div style="
+                                display:flex;
+                                justify-content:flex-end;
+                                margin-top:12px;
+                            ">
+                                <button
+                                    type="button"
+                                    class="admin-delete-support-message"
+                                    data-message-id="${escapeHtml(
+                                        message.id
+                                    )}"
+                                    style="
+                                        padding:8px 12px;
+                                        border:1px solid rgba(239,68,68,.20);
+                                        border-radius:8px;
+                                        background:rgba(239,68,68,.06);
+                                        color:#fca5a5;
+                                        cursor:pointer;
+                                        font-family:inherit;
+                                        font-weight:600;
+                                    "
+                                >
+                                    <i class="fa-solid fa-trash"></i>
+                                    Delete
+                                </button>
+                            </div>
                         </div>
 
                     `
@@ -2610,6 +2635,26 @@ function openSupportMessagesOverview(messages) {
 
             }
         );
+    overlay
+        .querySelectorAll(
+            ".admin-delete-support-message"
+        )
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        await deleteSupportMessage(
+                            button.dataset.messageId
+                        );
+
+                    }
+                );
+
+            }
+        );
 
 
     overlay.addEventListener(
@@ -2629,6 +2674,60 @@ function openSupportMessagesOverview(messages) {
         }
     );
 
+}
+/* ==================================================
+   DELETE SUPPORT MESSAGE
+================================================== */
+
+async function deleteSupportMessage(
+    messageId
+) {
+
+    if (!messageId) {
+        return;
+    }
+
+    if (
+        !confirm(
+            "Are you sure you want to delete this support message?"
+        )
+    ) {
+        return;
+    }
+
+    const {
+        error
+    } = await supabase
+        .from("support_messages")
+        .delete()
+        .eq(
+            "id",
+            messageId
+        );
+
+    if (error) {
+        console.error(
+            "Delete support message error:",
+            error
+        );
+
+        showMessage(
+            "Unable to delete support message: " +
+            error.message
+        );
+
+        return;
+    }
+
+    closeOverlay(
+        "supportMessagesOverlay"
+    );
+
+    await loadSupportMessages();
+
+    showMessage(
+        "Support message deleted successfully."
+    );
 }
 /* ==================================================
    CONTROL CENTER
