@@ -2706,6 +2706,9 @@ async function deleteSupportMessage(
             messageId
         )
         .select();
+        console.log("DELETE MESSAGE ID:", messageId);
+        console.log("DELETE RESULT:", data);
+        console.log("DELETE ERROR:", error);
     if (error) {
         console.error(
             "Delete support message error:",
