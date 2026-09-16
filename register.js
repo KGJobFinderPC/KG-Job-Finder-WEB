@@ -179,19 +179,20 @@ if (registerForm) {
             //========================================
             // CREATE ACCOUNT
             //========================================
+const {
+    data,
+    error
+} = await registerUser(
 
-            const {
-                data,
-                error
-            } = await registerUser(
+    fullName,
 
-                email,
+    email,
 
-                pass,
+    pass,
 
-                accountType
+    accountType
 
-            );
+);
 
             if (error) {
 
